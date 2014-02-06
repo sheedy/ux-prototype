@@ -6,7 +6,7 @@ module.exports = function(grunt) {
 		// 'compass:build',
 		'sass:server',
 		'copy:pre_concat',
-		// 'grunticon',
+		'grunticon',
 		'useminPrepare',
 		'concurrent:build',
 		'concat',
