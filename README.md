@@ -1,6 +1,7 @@
 [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 
 # UX Prototype
+v0.0.1
 
 Go from sketch to wireframe to prototype with this front-end development and design kit by generating static HTML pages from dynamic templates and partials, and modular CSS structure using SASS, allowing you to keep everything organised the way you need it to be.
 
