@@ -1,0 +1,25 @@
+{
+	"something": {
+		"info": {
+
+		},
+
+		"more-info": {
+			"sub-info": "value"
+		},
+
+		"other-stuff": {
+			"sub-info": "value"
+		}
+	},
+
+	"test": {
+		"sub-test": "value"
+	},
+
+	"buttons": {
+		"1": "More informaiton",
+		"2": "other",
+		"3": "Submit"
+	}
+}
