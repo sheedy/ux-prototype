@@ -8,8 +8,9 @@ module.exports = {
 		interrupt: false,
 		spawn: true,
 		dateFormat: function(time) {
-			grunt.log.writeln('The watch finished in ' + time + 'ms');
-			grunt.log.writeln('Waiting... Ready for more!');
+			// This returns a "grunt is not defined" error
+			// grunt.log.writeln('The watch finished in ' + time + 'ms');
+			// grunt.log.writeln('Waiting... Ready for more!');
 		}
 	},
 
