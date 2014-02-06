@@ -6,6 +6,7 @@ module.exports = {
 	server: [
 		// 'coffee:build',
 		'sass:server',
+		'sassdown',
 		'assemble:server'
 	],
 	test: [

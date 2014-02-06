@@ -51,7 +51,7 @@ module.exports = {
 
 	sass: {
 		files: ['<%= src %>/css/**/*.{scss,sass}'],
-		tasks: ['sass:server']
+		tasks: ['sass:server','sassdown']
 	},
 
 	pages_all: {
