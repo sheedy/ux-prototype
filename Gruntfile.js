@@ -34,5 +34,7 @@ module.exports = function (grunt) {
 
 	// load tasks in /tasks directory
 	grunt.loadTasks('tasks');
+	// need this to get rid of the "No tasks were registered or unregistered" warning
+	grunt.registerTask('dummy', []);
 
 };
