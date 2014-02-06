@@ -1,0 +1,37 @@
+/*
+* Global
+* ------------------------------------------------------------------------------
+*
+*/
+
+
+html {
+  font-family: $bodyfont;
+  line-height: $baseLineHeight;
+  @include font-smooth(antialiased);
+  @include base-font-size;
+  overflow-y:scroll;
+  min-height:100%;
+}
+
+body {
+  background: $bg-color;
+}
+
+* {
+  height: auto;
+  -webkit-text-size-adjust: none;
+  // @include box-sizing(border-box);
+}
+
+hr {
+  background: $border-color;
+  border: none;
+  height: 1px;
+  margin: 15px 0;
+}
+
+.wrapper {
+	width: 960px;
+	margin: 0 auto;
+}

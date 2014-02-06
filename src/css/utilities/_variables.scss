@@ -1,0 +1,128 @@
+// ==========================================================================
+// Variables
+// ==========================================================================
+
+
+// ===============================
+//           Colours
+// ===============================
+
+// ========== Base  ==========
+
+$white:                   #ffffff;
+$black:                   #000000;
+
+// ========== primary  ==========
+
+$light-grey:              #e9e9e9;
+$grey:                    #333333;
+$mid-grey:                #2c2c2c;
+$dark-grey:               #1c1c1c;
+
+// ========== Other  ==========
+
+$body-grey:               $grey;
+$bg-grey:                 $light-grey;
+$shadow-grey:             $mid-grey;
+$border-grey:             $grey;
+$border-grey-light:       $light-grey;
+$required-grey:           $mid-grey;
+$required-red:			  red;
+$error-red: 			  red;
+$pale-yellow: 			  #fff8bb;
+
+// ========== Colours with context  ==========
+
+$body-color:              $mid-grey;
+
+$header-dark: 			  $black;
+$header-mid: 			  $black;
+$header-light: 			  $black;
+
+$link-color: 			  $black;
+$link-color-light: 		  $border-grey;
+$bg-color: 				  $bg-grey;
+$shadow-color: 			  $shadow-grey;
+$border-color: 			  $border-grey;
+$border-color-light: 	  $border-grey-light;
+$notification-bubble-bg:  $required-grey;
+$error-colour: 			  $error-red;
+
+$table-header: 			  $bg-grey;
+
+$frame-color: 			  $grey;
+
+$focus-color: 			  $black;
+$focus-field-color: 	  $pale-yellow;
+
+// -----  End of Colours  ------
+
+
+
+// ====================================
+//           Device sizes
+// ====================================
+
+$phone-w: 				  320px;
+$phone-h: 				  480px;
+$tab-lw: 				  1024px;
+$tab-lh: 				  768px;
+$tab-pw: 				  768px;
+$tab-ph: 				  1024px;
+$desk-w: 				  1600px;
+$desk-h: 				  1200px;
+
+// -----  End of Device sizes  ------
+
+
+
+// =============================
+//           Forms
+// =============================
+
+// $radiocheckboxbg:         #93c8f6;
+// $radiocheckboxborders:    #7dabd5;
+
+// -----  End of Forms  ------
+
+
+
+// ==================================
+//           Typography
+// ==================================
+
+$bodyfont:                Arial, "Helvetica Neue", Helvetica, sans-serif;
+$base-font-size:          16;
+$base-line-height:        24;
+$baseLineHeight: 		  1.5;
+$headingthin:             $bodyfont;
+$headingbold:             $bodyfont;
+$debugTypography: 		  false;
+
+// -----  End of Typography  ------
+
+
+
+// ==============================
+//           Layout
+// ==============================
+
+// $box-padding:             20px;
+$border-radius-default:   4px;
+
+// -----  End of Layout  ------
+
+
+
+// ============================
+//           Grid
+// ============================
+
+$total-columns:           12;
+$column-width:            50px;
+$gutter-width:            40px;
+$grid-padding:            20px;
+$show-grid-backgrounds:   false;
+$container-width:         1119px; // -20px padding each side //1079px
+
+// -----  End of Grid  ------

@@ -1,0 +1,41 @@
+{
+	"1": {
+
+		"2": {
+
+			"lorem-ipsum": {
+
+				"other": [
+					{ "name": "John" },
+					{ "name": "Bob" },
+					{ "name": "Jim" }
+				],
+
+				"other-2": "",
+				"dates": [
+					{
+						"index": "day1",
+						"lateday-slots": [
+							{
+								"index": "slot7",
+								"time": "4:00 PM–5:00 PM",
+								"status": "available"
+							},
+
+							{
+								"index": "slot8",
+								"time": "5:00 PM–6:00 PM",
+								"status": "available"
+							}
+						]
+					}
+				],
+
+				"location": ""
+			}
+
+		}
+
+	}
+
+}

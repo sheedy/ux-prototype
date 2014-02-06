@@ -1,0 +1,83 @@
+/* 
+* Grid
+* ------------------------------------------------------------------------------
+* 
+*/
+
+// See _variables.scss for grid settings
+
+.col-1 {
+  @include span-columns(1,12);
+  &:nth-child(12n) { @include omega; }
+}
+.col-1-omega {
+  @include span-columns(1 omega,12);
+}
+.col-2 {
+  @include span-columns(2,12);
+  &:nth-child(6n) { @include omega; }
+}
+.col-2-omega {
+  @include span-columns(2 omega,12);
+}
+.col-3 {
+  @include span-columns(3,12);
+  &:nth-child(4n) { @include omega; }
+}
+.col-3-omega {
+  @include span-columns(3 omega,12);
+}
+.col-4 {
+  @include span-columns(4,12);
+  &:nth-child(3n) { @include omega; }
+}
+.col-4-omega {
+  @include span-columns(4 omega,12);
+}
+.col-5 {
+  @include span-columns(5,12);
+}
+.col-5-omega {
+  @include span-columns(5 omega,12);
+}
+.col-6 {
+  @include span-columns(6,12);
+  // &:nth-child(2n) { @include omega; }
+}
+.col-6-omega {
+  @include span-columns(6 omega,12);
+}
+.col-7 {
+  @include span-columns(7,12);
+}
+.col-7-omega {
+  @include span-columns(7 omega,12);
+}
+.col-8 {
+  @include span-columns(8,12);
+}
+.col-8-omega {
+  @include span-columns(8 omega,12);
+}
+.col-9 {
+  @include span-columns(9,12);
+}
+.col-9-omega {
+  @include span-columns(9 omega,12);
+}
+.col-10 {
+  @include span-columns(10,12);
+}
+.col-10-omega {
+  @include span-columns(10 omega,12);
+}
+.col-11 {
+  @include span-columns(11,12);
+}
+.col-11-omega {
+  @include span-columns(11 omega,12);
+}
+.col-12 {
+  @include span-columns(12,12);
+  &:nth-child(1n) { @include omega; }
+}

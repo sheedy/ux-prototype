@@ -1,0 +1,11 @@
+---
+title: Responsive Testing
+layout: src/templates/layouts/rwd.hbs
+url: ../index.html # The page that is loaded into the iframes
+---
+
+<div class="frame-wrap">
+	<iframe src="{{url}}" frameborder="0" class="frame-phone"></iframe>
+	<iframe src="{{url}}" frameborder="0" class="frame-tablet"></iframe>
+	<iframe src="{{url}}" frameborder="0" class="frame-desktop"></iframe>
+</div>

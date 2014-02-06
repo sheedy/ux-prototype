@@ -1,0 +1,41 @@
+// Variables
+$frame-color: $grey;
+
+//
+// Extends and mixins
+//
+
+%frame {
+	border: 1px solid $frame-color;
+	margin: 30px 20px;
+	display: inline-block;
+	vertical-align: top;
+}
+
+/* ==========================================================================
+   iframe
+========================================================================== */
+
+.frame-wrap {
+	width: 90%;
+	margin: 0 auto;
+	white-space: nowrap;
+}
+
+.frame-phone {
+	@extend %frame;
+	width: $phone-w;
+	height: $phone-h;
+}
+
+.frame-tablet {
+	@extend %frame;
+	width: $tab-pw;
+	height: $tab-ph;
+}
+
+.frame-desktop {
+	@extend %frame;
+	width: $desk-w;
+	height: $desk-h;
+}

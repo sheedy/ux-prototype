@@ -1,0 +1,101 @@
+// Mixins only
+
+@mixin font-smooth($type) {
+  -webkit-font-smoothing: $type;
+}
+
+@mixin sidebar-heading {
+  color: $header-dark;
+  font-weight: bold;
+  @include font-size(12);
+}
+
+@mixin gradient-top-down($from, $to) {
+	background-image: -moz-linear-gradient(top, $from, $to);
+	background-image: -webkit-gradient(linear,0 0,0 100%,from($from),to($to));
+	background-image: -webkit-linear-gradient(top, $from, $to);
+	background-image: -o-linear-gradient(top, $from, $to);
+	background-image: linear-gradient(to bottom, $from,$to);
+}
+
+@mixin nav-item-font() {
+	color: $header-dark;
+	font-weight: bold;
+}
+
+
+// Rem font-sizing
+//------------------------------------------------------------------------------
+
+// This works with the $base-font-size variable, which MUST be set on <html>.
+// <html> is the root for rem calculations. Without it (unless the base is 16px)
+// the calculations will be incorrect.
+
+@mixin base-font-size($pixels: $base-font-size) {
+  font-size: $pixels + px;
+  font-size: $pixels / 16 * 100%;
+}
+
+// This function will take the desired pixel result and provide a pixel fallback
+// version as well as rem version.  Do not include "px" units as argument.
+
+@mixin font-size($pixels: $base-font-size) {
+  font-size: $pixels + px;
+  font-size: $pixels / $base-font-size + rem;
+}
+
+//------------------------------------------------------------------------------ 
+
+
+// Media query mixin
+// - Will probably need to be adjusted
+//------------------------------------------------------------------------------
+
+@mixin respond-to($media) {
+  @if $media == retina {
+    @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+      @content;
+    }
+  }
+  @if $media == phone {
+    @media only screen and (max-width: 550px) {
+      @content;
+    }
+    @media screen and (device-aspect-ratio: 40 / 71) {
+      @content;
+    }
+  }
+  @if $media == landscape {
+    @media only screen and (max-width: 680px) {
+      @content;
+    }
+  }
+  @else if $media == tablets {
+    @media only screen and (max-width: 940px) {
+      @content;
+    }
+  }
+  @if $media == desktop {
+    @media only screen and (max-width: 1020px) {
+      @content;
+    }
+  }
+  @if $media == large {
+    @media only screen and (max-width: 1190px) {
+      @content;
+    }
+  }
+  @if $media == ios {
+    @media only screen and (max-width: 1024px) and (orientation: landscape), only screen and (max-width: 1024px) and (orientation: portrait) {
+      @content;
+    }
+  }
+  @if $media == phone-invert {
+    @media only screen and (min-width: 550px) {
+      @content;
+    }
+    @media screen and (not device-aspect-ratio: 40 / 71) {
+      @content;
+    }
+  }
+}

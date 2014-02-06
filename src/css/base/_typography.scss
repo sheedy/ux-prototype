@@ -1,0 +1,75 @@
+/*
+* Typography
+* ------------------------------------------------------------------------------
+*
+*/
+
+h1, .h1 {
+
+}
+
+h2, .h2 {
+
+}
+
+h3, .h3 {
+
+}
+
+h4, .h4 {
+
+}
+
+h5, .h5 {
+
+}
+
+p {
+	code {
+		padding: 2px 6px 3px;
+		margin: 0 2px;
+		border: 1px solid lighten($mid-grey, 50);
+		background-color: lighten($grey, 75);
+	}
+}
+
+a {
+
+}
+
+sub {
+
+}
+
+small {
+
+}
+
+em {
+
+}
+
+strong {
+	font-weight: bold;
+}
+
+blockquote {
+
+}
+
+pre {
+	padding: 10px 16px;
+	background-color: $mid-grey;
+	color: $white;
+	overflow: auto;
+}
+
+// debug
+@if $debugTypography {
+	body {
+		// thank you lea ;)
+		background-color: #fff;
+		background-image: -webkit-linear-gradient(transparent 50%, rgba(0, 0, 0, .1) 50%);
+		background-size: $baseLineHeight*2 $baseLineHeight*2;
+	}
+}

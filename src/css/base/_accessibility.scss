@@ -1,0 +1,23 @@
+/*
+* Accessibility
+* ------------------------------------------------------------------------------
+*
+*/
+
+// For accessibility we probably shouldn't turn off focus outline
+*:focus {
+  outline: 1px solid $focus-color;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+	&:focus {
+		outline: none;
+	}
+}
+
+a {
+  &:focus {
+    color: $white;
+    background-color: $focus-color;
+  }
+}
