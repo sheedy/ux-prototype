@@ -25,7 +25,7 @@ module.exports = {
 			'<%= temp %>/': [														// destination
 				'<%= src %>/templates/pages/*.hbs'									// target(s)
 			],
-			'<%= temp %>/posts/': ['<%= src %>/templates/pages/posts/*.hbs'],		// destination : target(s)
+			'<%= temp %>/subdir/': ['<%= src %>/templates/pages/subdir/*.hbs'],		// destination : target(s)
 			'<%= temp %>/proj-rwd/': ['<%= src %>/templates/pages/proj-rwd/*.hbs']	// destination : target(s)
 		}
 	}
