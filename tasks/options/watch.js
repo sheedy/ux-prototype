@@ -15,7 +15,7 @@ module.exports = {
 	},
 
 	data: {
-		files: ['<%= src %>/data/*.json'],
+		files: ['<%= src %>/data/*.json', '<%= src %>/templates/partials/**/*.json'],
 		tasks: ['assemble:server']
 	},
 
@@ -55,7 +55,7 @@ module.exports = {
 	},
 
 	pages_all: {
-		files: ['<%= src %>/templates/**/*.hbs'],
+		files: ['<%= src %>/**/*.hbs'],
 		tasks: ['assemble:server']
 	}
 
