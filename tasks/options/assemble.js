@@ -6,7 +6,7 @@ module.exports = {
 	options: {
 		flatten: true,
 		assets: '<%= temp %>',
-		data: "<%= src %>/data/*.json",
+		data: ['<%= src %>/data/*.json','<%= src %>/templates/partials/**/*.json'],
 		partials: ['<%= src %>/templates/partials/**/*.hbs', '<%= src %>/templates/layouts/*.hbs'],
 		layout: false
 	},
