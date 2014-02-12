@@ -6,9 +6,19 @@ module.exports = {
 	options: {
 		flatten: true,
 		assets: '<%= temp %>',
-		data: ['<%= src %>/data/*.json','<%= src %>/templates/partials/**/*.json'],
-		partials: ['<%= src %>/templates/partials/**/*.hbs', '<%= src %>/templates/layouts/*.hbs'],
-		layout: false
+		data: [
+			'<%= src %>/data/*.json',
+			'<%= src %>/content/partials/**/*.json'
+		],
+		partials: [
+			'<%= src %>/content/partials/**/*.hbs',
+			'<%= src %>/content/partials/patterns/**/*.hbs',
+			'<%= src %>/content/layouts/*.hbs'
+		],
+		layoutdir: 'src/content/templates',
+		layout: false,
+
+
 	},
 
 	// Splitting the targets below don't allow for the dynamic status page list
@@ -23,10 +33,10 @@ module.exports = {
 		},
 		files: {
 			'<%= temp %>/': [														// destination
-				'<%= src %>/templates/pages/*.hbs'									// target(s)
+				'<%= src %>/content/pages/*.hbs'									// target(s)
 			],
-			'<%= temp %>/subdir/': ['<%= src %>/templates/pages/subdir/*.hbs'],		// destination : target(s)
-			'<%= temp %>/proj-rwd/': ['<%= src %>/templates/pages/proj-rwd/*.hbs']	// destination : target(s)
+			'<%= temp %>/subdir/': ['<%= src %>/content/pages/subdir/*.hbs'],		// destination : target(s)
+			'<%= temp %>/proj-rwd/': ['<%= src %>/content/pages/proj-rwd/*.hbs']	// destination : target(s)
 		}
 	}
 
