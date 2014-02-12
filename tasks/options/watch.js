@@ -50,7 +50,10 @@ module.exports = {
 	// },
 
 	sass: {
-		files: ['<%= src %>/css/**/*.{scss,sass}'],
+		files: [
+			'<%= src %>/css/**/*.{scss,sass}',
+			'<%= src %>/styleguide/*.css'
+		],
 		tasks: ['sass:server','sassdown']
 	},
 
