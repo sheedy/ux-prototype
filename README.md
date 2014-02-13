@@ -104,6 +104,10 @@ grunt build
 
 Most page and directory relatred settings are in `tasks/options/assemble.js`.
 
+## Alternatives
+
+- [generator-style-prototype](https://github.com/Team-Sass/generator-style-prototype)
+- [grunt-frontend-workflow](https://github.com/akikoo/grunt-frontend-workflow)
 
 ## Author
 
