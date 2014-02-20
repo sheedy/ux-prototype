@@ -10,6 +10,7 @@ module.exports = {
 			'<%= src %>/data/*.json',
 			'<%= src %>/content/partials/**/*.json'
 		],
+		helpers: ['handlebars-helper-compose'],
 		partials: [
 			'<%= src %>/content/partials/**/*.hbs',
 			'<%= src %>/content/partials/patterns/**/*.hbs',

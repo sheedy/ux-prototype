@@ -31,3 +31,9 @@ path: src/content/partials/patterns/
 {{#markdown}}
 {{embed 'src/content/partials/patterns/dropdown/dropdown.json' 'json'}}
 {{/markdown}}
+
+{{#compose src="src/content/partials/patterns/**/*.hbs"}}
+
+	{{@content}}
+
+{{/compose}}
