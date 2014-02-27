@@ -1,0 +1,16 @@
+// $Function $Context Calculator
+// -------------------------------------//
+// divide a given font-size by base font-size & return a relative value
+
+@function context-calc($scale, $base, $value) {
+  @return ($scale/$base)#{$value};
+}
+
+
+// $Function $Measure-Margin
+// -------------------------------------//
+// divide 1 unit of measure by given font-size & return a relative em value
+
+@function measure-margin($scale, $measure, $value) {
+  @return ($measure/$scale)#{$value};
+}

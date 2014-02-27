@@ -3,6 +3,53 @@
 // ==========================================================================
 
 
+// ==================================
+//           Debugging
+// ==================================
+$debug-baseline:                 true;
+$debug-baseline-type:            stripe; // stroke | stripe
+$debug-baseline-stripe-color:    rgba(188, 238, 255, 0.5);
+$debug-baseline-stroke-color:    rgba(255, 0, 0, 1.0);
+$debug-baseline-offset:          0; // for fine tuning alignment adjustments
+
+// -----  End of Debugging  ------
+
+
+
+// ==================================
+//           Typography
+// ==================================
+
+$base-line-height: 1.5; // 16 * 1.54 = 24.64
+$font-size: 112.5; // percentage value (16 * 112.5% = 18px) - scale origin
+$font-base: 16 * ($font-size/100); // converts our percentage to a pixel value
+$font-weight: normal;
+$measure: $font-base * $base-line-height;
+// $measure: "";
+
+$font-family:              Arial, "Helvetica Neue", Helvetica, sans-serif;
+$headingthin:              $font-family;
+$headingbold:              $font-family;
+
+$tera: 117; // 117 = 18 × 6.5
+$giga: 90; // 90 = 18 × 5
+$mega: 72; // 72 = 18 × 4
+$alpha: 60; // 60 = 18 × 3.3333
+$beta: 48; // 48 = 18 × 2.6667
+$gamma: 36; // 36 = 18 × 2
+$delta: 24; // 24 = 18 × 1.3333
+$epsilon: 21; // 21 = 18 × 1.1667
+$zeta: 18; // 18 = 18 × 1
+
+$type-scale-unit-value: rem !default;
+
+$ms-base: 1rem;
+$ms-ratio: $golden;
+@debug ms-list(1, 10, $ms-base, $ms-ratio);
+// -----  End of Typography  ------
+
+
+
 // ===============================
 //           Colours
 // ===============================
@@ -84,22 +131,6 @@ $desk-h: 				  1200px;
 // $radiocheckboxborders:    #7dabd5;
 
 // -----  End of Forms  ------
-
-
-
-// ==================================
-//           Typography
-// ==================================
-
-$bodyfont:                Arial, "Helvetica Neue", Helvetica, sans-serif;
-$base-font-size:          16;
-$base-line-height:        24;
-$baseLineHeight: 		  1.5;
-$headingthin:             $bodyfont;
-$headingbold:             $bodyfont;
-$debugTypography: 		  false;
-
-// -----  End of Typography  ------
 
 
 

@@ -4,6 +4,26 @@
 *
 */
 
+// $Placeholder $Wordwrap
+// -------------------------------------//
+// Silent Sass Classes - A.K.A Placeholders
+//
+// normal: Indicates that lines may only break at normal word break points.
+// break-word : Indicates that normally unbreakable words may be broken at
+// arbitrary points if there are no otherwise acceptable break points in the line.
+
+%breakword {
+	word-wrap: break-word;
+}
+
+%normal-wrap {
+	word-wrap: normal;
+}
+
+%inherit-wrap {
+	word-wrap: auto;
+}
+
 h1, .h1 {
 
 }
@@ -24,10 +44,84 @@ h5, .h5 {
 
 }
 
+
+// $Styles $Headings
+// -------------------------------------//
+
+// Extend included classes on any element of your
+// choosing for adjusting type based on the scale
+// provided.
+
+// For example:
+
+// <h6 class="giga">Awesome Headline</h6>
+// <p class="tera">a story about a dude</p>
+
+// Our Type Scale is as follows with px fallbacks
+// for IE 6-8 as they do not understand REM units.
+//
+// 18, 21, 24, 36, 48, 60, 72, 90, 117
+
+// styles for all headings, in the style of @csswizardry
+%hN {
+	text-rendering: optimizeLegibility; // voodoo to enable ligatures and kerning
+	line-height: 1; // this fixes huge spaces when a heading wraps onto two lines
+	// margin: $ms-ratio/2 + $type-scale-unit-value 0;
+	margin-top: 0;
+	margin-bottom: ms(1)/2.5;
+}
+
+// Multi-dimensional array, where:
+// the first value is the name of the class
+// and the second value is the variable for the size
+$sizes: tera $tera, giga $giga, mega $mega, alpha $alpha, beta $beta, gamma $gamma, delta $delta, epsilon $epsilon, zeta $zeta;
+
+// Sass loop to associate h1-h6 tags with their appropriate greek
+// heading based on a modular scale.
+// for each size in the scale, create a class
+// @each $size in $sizes {
+// 	.#{nth($size, 1)} {
+// 		@include type-scale(nth($size, 2), $font-base, '#{$type-scale-unit-value}', $measure);
+// 	}
+// }
+
+// associate h1-h6 tags with their appropriate greek heading
+h1 {
+	// @extend .alpha;
+	font-size: ms(3, 1em);
+	@extend %hN;
+}
+
+// h2 {
+// 	@extend .beta;
+// 	@extend %hN;
+// }
+
+// h3 {
+// 	@extend .gamma;
+// 	@extend %hN;
+// }
+
+// h4 {
+// 	@extend .delta;
+// 	@extend %hN;
+// }
+
+// h5 {
+// 	@extend .epsilon;
+// 	@extend %hN;
+// }
+
+// h6 {
+// 	@extend .zeta;
+// 	@extend %hN;
+// }
+
 p {
 	// Kerning
 	// http://blog.typekit.com/2014/02/05/kerning-on-the-web/
-
+	margin: 0 0 #{$base-line-height}em 0;
+	// margin: 0;
 	text-rendering: optimizeLegibility;
 	font-feature-settings: "kern" 1;
 	-webkit-font-feature-settings: "kern";
@@ -71,14 +165,4 @@ pre {
 	background-color: $mid-grey;
 	color: $white;
 	overflow: auto;
-}
-
-// debug
-@if $debugTypography {
-	body {
-		// thank you lea ;)
-		background-color: #fff;
-		background-image: -webkit-linear-gradient(transparent 50%, rgba(0, 0, 0, .1) 50%);
-		background-size: $baseLineHeight*2 $baseLineHeight*2;
-	}
 }

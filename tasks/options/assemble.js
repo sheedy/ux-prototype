@@ -8,12 +8,11 @@ module.exports = {
 		assets: '<%= temp %>',
 		data: [
 			'<%= src %>/data/*.json',
-			'<%= src %>/content/partials/**/*.json'
+			'<%= src %>/patterns/**/*.json'
 		],
-		helpers: ['handlebars-helper-compose'],
 		partials: [
 			'<%= src %>/content/partials/**/*.hbs',
-			'<%= src %>/content/partials/patterns/**/*.hbs',
+			'<%= src %>/patterns/**/*.hbs',
 			'<%= src %>/content/layouts/*.hbs'
 		],
 		layoutdir: 'src/content/templates',
@@ -33,11 +32,9 @@ module.exports = {
 			// assets: '<%= temp %>'
 		},
 		files: {
-			'<%= temp %>/': [														// destination
-				'<%= src %>/content/pages/*.hbs'									// target(s)
-			],
-			'<%= temp %>/subdir/': ['<%= src %>/content/pages/subdir/*.hbs'],		// destination : target(s)
-			'<%= temp %>/proj-rwd/': ['<%= src %>/content/pages/proj-rwd/*.hbs']	// destination : target(s)
+			'<%= temp %>/': '<%= src %>/content/pages/*.hbs',
+			'<%= temp %>/project/rwd/': '<%= src %>/content/pages/project/rwd/*.hbs',
+			'<%= temp %>/project/typography/': '<%= src %>/content/pages/project/typography/*.hbs',
 		}
 	}
 

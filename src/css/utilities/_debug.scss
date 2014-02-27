@@ -1,0 +1,13 @@
+@mixin debug-baseline($type: stripe) {
+	@if ($debug-baseline) {
+		@if ($type == 'stroke') {
+			background-image: -webkit-linear-gradient(transparent 99%, $debug-baseline-stroke-color 0);
+			background-size: auto #{$base-line-height * 1}em;
+		}
+		@if ($type == 'stripe') {
+			background-image: -webkit-linear-gradient(transparent 50%, $debug-baseline-stripe-color 50%);
+			background-size: auto #{$base-line-height * 2}em;
+		}
+		background-position: 0 $debug-baseline-offset;
+	}
+}

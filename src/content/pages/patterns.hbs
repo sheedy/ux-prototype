@@ -1,6 +1,6 @@
 ---
 layout: default.hbs
-path: src/content/partials/patterns/
+path: src/patterns/
 ---
 
 
@@ -15,7 +15,7 @@ path: src/content/partials/patterns/
 
 <h4>dropdown.hbs</h4>
 {{#markdown}}
-{{embed 'src/content/partials/patterns/dropdown/dropdown.hbs' 'html'}}
+{{embed 'src/patterns/forms/dropdown/dropdown.hbs' 'html'}}
 {{/markdown}}
 
 <h4>Sass/SCSS</h4>
@@ -29,11 +29,5 @@ path: src/content/partials/patterns/
 
 <h4>dropdown.json</h4>
 {{#markdown}}
-{{embed 'src/content/partials/patterns/dropdown/dropdown.json' 'json'}}
+{{embed 'src/patterns/forms/dropdown/dropdown.json' 'json'}}
 {{/markdown}}
-
-{{#compose src="src/content/partials/patterns/**/*.hbs"}}
-
-	{{@content}}
-
-{{/compose}}

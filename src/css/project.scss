@@ -13,9 +13,12 @@
 // only import things like variables and mixins. This file should be included at
 // the top of each individual sass/css file (not partials).
 
+@import "../bower_components/modular-scale/stylesheets/modular-scale";
+
 // Variables
 //------------------------------------------------------------------------------
 
 @import "utilities/variables";
 
 @import "_project/dib/iframe";
+// @import "_project/dib/typography";
