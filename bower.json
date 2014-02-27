@@ -5,7 +5,10 @@
     "modernizr": "~2.6.2",
     "jquery": "~1.9.0",
     "jquery-color": "~2.1.2",
-    "animate.css": "~2.1.1"
+    "animate.css": "~2.1.1",
+    "modular-scale": "~2.0.4",
+    "fittext": "*",
+    "letteringjs": "~0.6.1"
   },
   "devDependencies": {}
 }

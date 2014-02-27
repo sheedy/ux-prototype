@@ -6,6 +6,7 @@
 // External dependencies
 //------------------------------------------------------------------------------
 
+@import "../../bower_components/modular-scale/stylesheets/modular-scale";
 
 // Grid
 // @import "susy"; // requires compass
@@ -27,11 +28,13 @@
 //------------------------------------------------------------------------------
 
 @import "utilities/variables";
+@import "utilities/debug";
 
 
 // Utilities
 //------------------------------------------------------------------------------
 
+@import "utilities/functions";
 @import "utilities/mixins";
 
 

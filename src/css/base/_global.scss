@@ -6,21 +6,36 @@
 
 
 html {
-  font-family: $bodyfont;
-  line-height: $baseLineHeight;
+  font: $font-weight #{$font-size}%/#{$base-line-height} $font-family;
   @include font-smooth(antialiased);
-  @include base-font-size;
   overflow-y:scroll;
   min-height:100%;
 }
 
 body {
-  background: $bg-color;
+  margin: 0;
+  padding: 0;
+  background-color: $bg-color;
+
+  // Ala Trent Walton
+  @include css-hyphens(auto);
+
+  // normal: Indicates that lines may only break at normal word break points.
+  // break-word : Indicates that normally unbreakable words may be broken at ...
+  // arbitrary points if there are no otherwise acceptable break points in the line.
+  @extend %breakword;
+
+  // debug
+  @if $debug-baseline-type {
+    @include debug-baseline($debug-baseline-type);
+  }
 }
 
 * {
+  margin: 0;
+  padding: 0;
   height: auto;
-  -webkit-text-size-adjust: none;
+  -webkit-text-size-adjust: none; // will prevent the user to zoom in or out the Web page on mobile browsers
   // @include box-sizing(border-box);
 }
 
@@ -32,6 +47,6 @@ hr {
 }
 
 .wrapper {
-	width: 960px;
+	// width: 960px;
 	margin: 0 auto;
 }

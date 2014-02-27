@@ -30,3 +30,8 @@ grunt build
 
 Most page and directory relatred settings are in `tasks/options/assemble.js`.
 
+#### Design
+
+The folowing pages will help you establish the base look and feel:
+
+- [Typography](project/typography)
