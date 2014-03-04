@@ -4,18 +4,44 @@
 *
 */
 
+/*
+ * 1. Corrects text resizing oddly in IE6/7 when body font-size is set using em units
+ *    http://clagnut.com/blog/348/#c790
+ * 2. Prevents iOS text size adjust after orientation change, without disabling user zoom
+ *    www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/
+ */
 
 html {
   font: $font-weight #{$font-size}%/#{$base-line-height} $font-family;
   @include font-smooth(antialiased);
+  color: lighten($black, 20%);
   overflow-y:scroll;
   min-height:100%;
+  font-size: 1.125em; /* 1 */
+  -webkit-text-size-adjust: 1.125em; /* 2 */
+  -ms-text-size-adjust: 1.125em; /* 2 */
 }
 
+/*
+ * Addresses font-family inconsistency between 'textarea' and other form elements.
+ */
+
+html,
+button,
+input,
+select,
+textarea {
+    // font-family: sans-serif;
+}
+
+/*
+ * Addresses margins handled incorrectly in IE6/7
+ */
+
 body {
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
-  background-color: $bg-color;
+  background-color: lighten($bg-color, 7%);
 
   // Ala Trent Walton
   @include css-hyphens(auto);
@@ -26,8 +52,12 @@ body {
   @extend %breakword;
 
   // debug
-  @if $debug-baseline-type {
-    @include debug-baseline($debug-baseline-type);
+  // @if $debug-baseline-type {
+  //   @include debug-baseline($debug-baseline-type);
+  // }
+
+  &:before {
+    @include baseline-grid;
   }
 }
 
@@ -47,6 +77,6 @@ hr {
 }
 
 .wrapper {
-	// width: 960px;
+	width: $body-width;
 	margin: 0 auto;
 }

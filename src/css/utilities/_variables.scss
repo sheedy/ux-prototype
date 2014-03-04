@@ -6,11 +6,23 @@
 // ==================================
 //           Debugging
 // ==================================
+
 $debug-baseline:                 true;
 $debug-baseline-type:            stripe; // stroke | stripe
 $debug-baseline-stripe-color:    rgba(188, 238, 255, 0.5);
 $debug-baseline-stroke-color:    rgba(255, 0, 0, 1.0);
 $debug-baseline-offset:          0; // for fine tuning alignment adjustments
+
+$body-width: 960px;
+$baseline: 1.5rem;
+$columns: 12;
+$column-color: rgba(200,0,0,.2);
+$baseline-color: rgba(56,255,255,.8);
+
+// These are all automatically calculated
+$gutter-width: 20px;  // Change if you like
+$gutters: ($columns - 1);
+$column-width: $body-width / $columns - $gutter-width;
 
 // -----  End of Debugging  ------
 
@@ -27,7 +39,8 @@ $font-weight: normal;
 $measure: $font-base * $base-line-height;
 // $measure: "";
 
-$font-family:              Arial, "Helvetica Neue", Helvetica, sans-serif;
+$font-family:              Cambria, Georgia, "Times New Roman", Times, serif;
+$font-family-alt:          Arial, "Helvetica Neue", Helvetica, sans-serif;
 $headingthin:              $font-family;
 $headingbold:              $font-family;
 
@@ -149,11 +162,11 @@ $border-radius-default:   4px;
 //           Grid
 // ============================
 
-$total-columns:           12;
-$column-width:            50px;
-$gutter-width:            40px;
-$grid-padding:            20px;
-$show-grid-backgrounds:   false;
-$container-width:         1119px; // -20px padding each side //1079px
+// $total-columns:           12;
+// $column-width:            50px;
+// $gutter-width:            40px;
+// $grid-padding:            20px;
+// $show-grid-backgrounds:   false;
+// $container-width:         1119px; // -20px padding each side //1079px
 
 // -----  End of Grid  ------

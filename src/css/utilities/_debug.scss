@@ -1,8 +1,12 @@
 @mixin debug-baseline($type: stripe) {
 	@if ($debug-baseline) {
 		@if ($type == 'stroke') {
-			background-image: -webkit-linear-gradient(transparent 99%, $debug-baseline-stroke-color 0);
-			background-size: auto #{$base-line-height * 1}em;
+			background-image: -webkit-linear-gradient($debug-baseline-stroke-color 0.05em, transparent 0.05em);
+			background-image:    -moz-linear-gradient($debug-baseline-stroke-color 1px, transparent 1px);
+			background-image:     -ms-linear-gradient($debug-baseline-stroke-color 1px, transparent 1px);
+			background-image:      -o-linear-gradient($debug-baseline-stroke-color 1px, transparent 1px);
+			background-image:         linear-gradient($debug-baseline-stroke-color 1px, transparent 1px);
+			background-size: auto #{$base-line-height}em;
 		}
 		@if ($type == 'stripe') {
 			background-image: -webkit-linear-gradient(transparent 50%, $debug-baseline-stripe-color 50%);
@@ -10,4 +14,25 @@
 		}
 		background-position: 0 $debug-baseline-offset;
 	}
+}
+
+
+@mixin baseline-grid {
+  content: '';
+  display: inline-block;
+  background-image: -webkit-linear-gradient(0deg, $column-color $column-width, transparent $gutter-width),
+                    -webkit-linear-gradient(top, $baseline-color 0.05em, transparent 0.05em);
+  background-size: ($column-width + $gutter-width) 100%, 100% $baseline;
+  background-position: $gutter-width/2 0px; // Use to offset and center your grid
+
+  height: 100%;
+  left: 0;
+  margin: 0 auto;
+  max-width: $body-width;
+  opacity: 0.4;
+  position: absolute;
+  right: 0;
+  width: 100%;
+  pointer-events: none;
+  z-index: -1;
 }

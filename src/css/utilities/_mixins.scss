@@ -28,6 +28,22 @@
   }
 }
 
+// http://jackosborne.com/articles/using-media-queries-to-check-your-designs-in-the-browser/
+@media screen and (max-width: 1200px) {
+  .wrapper {opacity: 0.4;}
+  body {background: url('mock-up.png') no-repeat center top;}
+}
+
+// Other examples
+// @media screen and (max-width: 1200px) {
+//   #wrapper {opacity: 0.4;}
+//   body#about {background: url('about-mock-up.png') no-repeat center top;}
+// }
+
+// @media screen and (max-width: 320px) {
+//   #wrapper {opacity: 0.4;}
+//   body#about {background: url('about-mock-up-iphone.png') no-repeat center top;}
+// }
 
 // =========================
 
