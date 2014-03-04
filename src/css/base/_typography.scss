@@ -88,7 +88,7 @@ $sizes: tera $tera, giga $giga, mega $mega, alpha $alpha, beta $beta, gamma $gam
 // associate h1-h6 tags with their appropriate greek heading
 h1 {
 	// @extend .alpha;
-	font-size: ms(3, 1em);
+	font-size: ms(1, 1em);
 	@extend %hN;
 }
 
