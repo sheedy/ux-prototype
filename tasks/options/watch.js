@@ -26,11 +26,14 @@ module.exports = {
 
 	svg: {
 		files: ['<%= src %>/images/svg-src/*.svg'],
-		tasks: ['grunticon','copy:svg_build']
+		tasks: [
+			'grunticon',
+			'copy:svg_build'
+		]
 	},
 
 	images: {
-		files: ['<%= src %>/images/{,*/}*.{png,jpg,jpeg,gif,webp}'],
+		files: ['<%= src %>/images/{!(svg-build),**}/**'],
 		tasks: ['newer:copy:images']
 	},
 
