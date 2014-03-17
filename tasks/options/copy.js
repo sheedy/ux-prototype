@@ -30,7 +30,7 @@ module.exports = {
 					'../.tmp/**/*.html',
 					'*.{ico,png}',
 					'.htaccess',
-					'images/**/*.{png,gif,jpg,jpeg,svg}'
+					'images/**/**'
 				]
 			}
 		]
@@ -72,7 +72,7 @@ module.exports = {
 				dot: true,
 				cwd: '<%= src %>/images',
 				dest: '<%= temp %>/images',
-				src: [ '{!(svg-src),!(svg-build),**}/**' ]
+				src: [ '{!(svg-build),**}/**' ]
 			}
 		]
 	},
