@@ -65,10 +65,46 @@ h5, .h5 {
 // styles for all headings, in the style of @csswizardry
 %hN {
 	text-rendering: optimizeLegibility; // voodoo to enable ligatures and kerning
-	line-height: 1; // this fixes huge spaces when a heading wraps onto two lines
+	// line-height: 1; // this fixes huge spaces when a heading wraps onto two lines
 	// margin: $ms-ratio/2 + $type-scale-unit-value 0;
-	margin-top: 0;
-	margin-bottom: ms(1)/2.5;
+	// margin-top: 0;
+	// margin-bottom: ms(1, 1rem);
+
+	// grab font-size and determine next highest multiple (add switch for next lowest) of $base-line-height
+	// add difference between old size and next multiple of $base-line-height to $base-line-height
+
+	// $i: ms(5);
+	// $multiple: 1;
+	// $new-base-line-height: 1.5;
+	// @debug "original " + $new-base-line-height;
+	// // @debug ms-list(1, 10, $ms-base, $ms-ratio);
+	// @while $i > $new-base-line-height {
+	//   // .item-#{$i} { width: 2em * $i; }
+	//   $new-base-line-height: $base-line-height * $multiple;
+	//   @debug "new height " + $new-base-line-height;
+	//   $multiple: $multiple + 1;
+	//   // @debug "multiple " + $multiple;
+	// }
+	// @debug "new: " + $new-base-line-height;
+
+	// $testh: $new-base-line-height - 4.21399;
+	// $new-margin: ($base-line-height + $testh) * 2;
+	// @debug $new-margin;
+	// // @if ($new-margin > 1.5) {
+	// // 	margin-bottom: 1.5rem; // needs to be the next value below 1.5 as 1.5 is just added to the bottom and misaligning
+	// // 	@debug "greater";
+	// // }
+	// // @else {
+	// 	margin-bottom: $new-margin + rem;
+	// 	@debug "less";
+	// // }
+
+	// margin-bottom: $base-line-height * 1 + rem;
+	-webkit-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
+	-moz-font-feature-settings: 'dlig=1, liga=1, lnum=1, kern=1';
+	-ms-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
+	-o-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
+	font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
 }
 
 // Multi-dimensional array, where:
@@ -88,14 +124,59 @@ $sizes: tera $tera, giga $giga, mega $mega, alpha $alpha, beta $beta, gamma $gam
 // associate h1-h6 tags with their appropriate greek heading
 h1 {
 	// @extend .alpha;
-	font-size: ms(1, 1em);
+	// font-size: ms(5);
+
+	$font-size: ms(7);
+	$multiple: 1;
+	$new-base-line-height: 1.5;
+	@debug "original " + $new-base-line-height;
+	// @debug ms-list(1, 10, $ms-base, $ms-ratio);
+	@while $font-size > $new-base-line-height {
+	  // .item-#{$i} { width: 2em * $i; }
+	  $multiple: $multiple + 1;
+	  $new-base-line-height: $base-line-height * $multiple;
+	  @debug "new height " + $new-base-line-height;
+
+	  // @debug "multiple " + $multiple;
+	}
+	@debug "new: " + $new-base-line-height;
+
+	// A small, internally-used function to remove the units from a given value.
+	@function typecsset-strip-units($number) {
+	    @return $number / ($number * 0 + 1);
+	}
+
+	// $testh: $new-base-line-height - 4.21399;
+	// $new-margin: ($base-line-height + $testh) * 2;
+	// @debug $new-margin;
+	// // @if ($new-margin > 1.5) {
+	// // 	margin-bottom: 1.5rem; // needs to be the next value below 1.5 as 1.5 is just added to the bottom and misaligning
+	// // 	@debug "greater";
+	// // }
+	// // @else {
+	// 	margin-bottom: $new-margin + rem;
+	// 	@debug "less";
+	// // }
+
+
+	font-size: $font-size;
+	line-height: (($new-base-line-height + 1.5) / typecsset-strip-units($font-size));
+	margin-bottom: ($base-line-height * 2) + rem;
 	@extend %hN;
+	// line-height: (24 / 4.23607) + rem;
+	// Next, we need to make sure the line height of each is 24 pixels.
+	// This means that the h1 at a 24-point font size will have a line height
+	// of 1 em. Here’s the math:
+	// (magic number) ÷ (font size) = (line height)
+	background-color: rgba(255,0,0,0.2);
 }
 
-// h2 {
-// 	@extend .beta;
-// 	@extend %hN;
-// }
+h2 {
+	// @extend .beta;
+	font-size: ms(1, 1rem);
+	// line-height: #{$base-line-height} / ms(2, 1rem);
+	@extend %hN;
+}
 
 // h3 {
 // 	@extend .gamma;
@@ -120,7 +201,7 @@ h1 {
 p {
 	// Kerning
 	// http://blog.typekit.com/2014/02/05/kerning-on-the-web/
-	margin: 0 0 #{$base-line-height}em 0;
+	margin: 0 0 #{$base-line-height}rem 0;
 	// margin: 0;
 	text-rendering: optimizeLegibility;
 	font-feature-settings: "kern" 1;
@@ -128,6 +209,13 @@ p {
 	-moz-font-feature-settings: "kern";
 	-moz-font-feature-settings: "kern=1";
 	font-kerning: normal;
+
+	-webkit-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
+	-moz-font-feature-settings: 'kern=1, onum=1, liga=1';
+	-ms-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
+	-o-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
+	font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
+
 	code {
 		padding: 2px 6px 3px;
 		margin: 0 2px;

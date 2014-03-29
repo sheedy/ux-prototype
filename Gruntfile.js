@@ -27,7 +27,7 @@ module.exports = function (grunt) {
 			build:    'build',
 			temp:     '.tmp',
 			LIVERELOAD_PORT: 35028,
-			port:     9002,
+			port:     9003,
 			hostname: '0.0.0.0'                                // enter 'your-host-ip-address:port-number-from-above' into browser address bar for remote livereload
 		}
 	});
