@@ -7,7 +7,7 @@
 //           Debugging
 // ==================================
 
-$debug-baseline:                 true;
+$debug-baseline:                 false;
 $debug-baseline-type:            stripe; // stroke | stripe
 $debug-baseline-stripe-color:    rgba(188, 238, 255, 0.5);
 $debug-baseline-stroke-color:    rgba(255, 0, 0, 1.0);
@@ -32,7 +32,9 @@ $column-width: $body-width / $columns - $gutter-width;
 //           Typography
 // ==================================
 
+// "measure" should effect line-height
 $base-line-height: 1.5; // 16 * 1.54 = 24.64
+$base-line-height-granular: ($base-line-height / 2);
 $font-size: 112.5; // percentage value (16 * 112.5% = 18px) - scale origin
 $font-base: 16 * ($font-size/100); // converts our percentage to a pixel value
 $font-weight: normal;
@@ -57,8 +59,10 @@ $zeta: 18; // 18 = 18 × 1
 $type-scale-unit-value: rem !default;
 
 $ms-base: 1rem;
-$ms-ratio: $golden;
+$ms-ratio: $fourth;
+
 @debug ms-list(1, 10, $ms-base, $ms-ratio);
+
 // -----  End of Typography  ------
 
 
