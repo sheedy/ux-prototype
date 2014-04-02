@@ -2,30 +2,18 @@
 // Variables
 // ==========================================================================
 
+// ============================
+//           Grid
+// ============================
 
-// ==================================
-//           Debugging
-// ==================================
+$gutter-width:            20px;
+$body-width:              960px;
+$columns:                 12;
+$column-width: 			  $body-width / $columns - $gutter-width;
+$grid-padding:            20px;
+$show-grid-backgrounds:   false;
 
-$debug-baseline:                 false;
-$debug-baseline-type:            stripe; // stroke | stripe
-$debug-baseline-stripe-color:    rgba(188, 238, 255, 0.5);
-$debug-baseline-stroke-color:    rgba(255, 0, 0, 1.0);
-$debug-baseline-offset:          0; // for fine tuning alignment adjustments
-
-$body-width: 960px;
-$baseline: 1.5rem;
-$columns: 12;
-$column-color: rgba(200,0,0,.2);
-$baseline-color: rgba(56,255,255,.8);
-
-// These are all automatically calculated
-$gutter-width: 20px;  // Change if you like
-$gutters: ($columns - 1);
-$column-width: $body-width / $columns - $gutter-width;
-
-// -----  End of Debugging  ------
-
+// -----  End of Grid  ------
 
 
 // ==================================
@@ -33,38 +21,40 @@ $column-width: $body-width / $columns - $gutter-width;
 // ==================================
 
 // "measure" should effect line-height
-$base-line-height: 1.5; // 16 * 1.54 = 24.64
-$base-line-height-granular: ($base-line-height / 2);
-$font-size: 112.5; // percentage value (16 * 112.5% = 18px) - scale origin
-$font-base: 16 * ($font-size/100); // converts our percentage to a pixel value
-$font-weight: normal;
-$measure: $font-base * $base-line-height;
-// $measure: "";
+$font-size:                                             112.5; // percentage value (16 * 112.5% = 18px) - scale origin
+$font-base:                                             16 * ($font-size/100); // converts our percentage to a pixel value
 
-$font-family:              Cambria, Georgia, "Times New Roman", Times, serif;
-$font-family-alt:          Arial, "Helvetica Neue", Helvetica, sans-serif;
-$headingthin:              $font-family;
-$headingbold:              $font-family;
+$base-line-height:                                      1.5; // 16px * 1.5 = 24px
+$measure:                                               $font-base * $base-line-height;
 
-$tera: 117; // 117 = 18 × 6.5
-$giga: 90; // 90 = 18 × 5
-$mega: 72; // 72 = 18 × 4
-$alpha: 60; // 60 = 18 × 3.3333
-$beta: 48; // 48 = 18 × 2.6667
-$gamma: 36; // 36 = 18 × 2
-$delta: 24; // 24 = 18 × 1.3333
-$epsilon: 21; // 21 = 18 × 1.1667
-$zeta: 18; // 18 = 18 × 1
+$font-family:                                           Cambria, Georgia, "Times New Roman", Times, serif;
+$font-family-alt:                                       Arial, "Helvetica Neue", Helvetica, sans-serif;
+$headingthin:                                           $font-family;
+$headingbold:                                           $font-family;
+$font-weight:                                           normal;
 
-$type-scale-unit-value: rem !default;
+// Modular scale
+// https://github.com/Team-Sass/modular-scale
+//
+// Use http://type-scale.com/ or http://modularscale.com/ to determine your ratio
 
 $ms-base: 1rem;
 $ms-ratio: $fourth;
 
-@debug ms-list(1, 10, $ms-base, $ms-ratio);
+// Font size list
+$tera:                                                  8; // 117 = 18 × 6.5
+$giga:                                                  7; // 90 = 18 × 5
+$mega:                                                  6; // 72 = 18 × 4
+$alpha:                                                 5; // 60 = 18 × 3.3333
+$beta:                                                  4; // 48 = 18 × 2.6667
+$gamma:                                                 3; // 36 = 18 × 2
+$delta:                                                 2; // 24 = 18 × 1.3333
+$epsilon:                                               1; // 21 = 18 × 1.1667
+$zeta:                                                  0; // 18 = 18 × 1
+
+$type-scale-unit-value: rem !default;
 
 // -----  End of Typography  ------
-
 
 
 // ===============================
@@ -122,7 +112,6 @@ $focus-field-color: 	  $pale-yellow;
 // -----  End of Colours  ------
 
 
-
 // ====================================
 //           Device sizes
 // ====================================
@@ -139,7 +128,6 @@ $desk-h: 				  1200px;
 // -----  End of Device sizes  ------
 
 
-
 // =============================
 //           Forms
 // =============================
@@ -148,7 +136,6 @@ $desk-h: 				  1200px;
 // $radiocheckboxborders:    #7dabd5;
 
 // -----  End of Forms  ------
-
 
 
 // ==============================
@@ -161,16 +148,16 @@ $border-radius-default:   4px;
 // -----  End of Layout  ------
 
 
+// ==================================
+//           Debugging
+// ==================================
 
-// ============================
-//           Grid
-// ============================
-
-// $total-columns:           12;
-// $column-width:            50px;
-// $gutter-width:            40px;
-// $grid-padding:            20px;
-// $show-grid-backgrounds:   false;
-// $container-width:         1119px; // -20px padding each side //1079px
-
-// -----  End of Grid  ------
+$debug:                          true;
+$debug-baseline:                 true;
+$debug-baseline-type:            stroke; // stroke | stripe
+$debug-baseline-stripe-color:    rgba(188, 238, 255, 0.5);
+$debug-baseline-stroke-color:    rgba(56,255,255, 0.8);
+$debug-baseline-stroke-width:    0.05em;
+$debug-baseline-stripe-width:    50%;
+$debug-baseline-offset:          0; // for fine tuning alignment adjustments
+$debug-column-color:             rgba(200, 0, 0, 0.2);
