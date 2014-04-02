@@ -1,0 +1,12 @@
+// ============================
+//           Grid
+// ============================
+
+$gutter-width:            20px;
+$body-width:              960px;
+$columns:                 12;
+$column-width: 			  $body-width / $columns - $gutter-width;
+$grid-padding:            20px;
+$show-grid-backgrounds:   false;
+
+// -----  End of Grid  ------

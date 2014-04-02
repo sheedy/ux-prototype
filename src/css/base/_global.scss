@@ -52,13 +52,14 @@ body {
   @extend %breakword;
 
   // debug
-  // @if $debug-baseline-type {
-  //   @include debug-baseline($debug-baseline-type);
-  // }
+  @if $debug-baseline-type {
+    @include debug-baseline($debug-baseline-type);
+  }
 
   &:before {
-    @include baseline-grid;
+    // @include debug-baseline-and-grid;
   }
+
 }
 
 * {

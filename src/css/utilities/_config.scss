@@ -28,7 +28,6 @@
 //------------------------------------------------------------------------------
 
 @import "utilities/variables";
-@import "utilities/debug";
 
 
 // Utilities
@@ -36,6 +35,8 @@
 
 @import "utilities/functions";
 @import "utilities/mixins";
+@import "utilities/mixins-typography";
+@import "utilities/mixins-debug";
 
 
 /* ==========================================================================
@@ -83,4 +84,12 @@
 ========================================================================== */
 
 // Fix these
-@import "generic/shame"
+@import "generic/shame";
+
+
+/* ==========================================================================
+   Debug
+========================================================================== */
+
+// Fix these
+@import "utilities/debug"

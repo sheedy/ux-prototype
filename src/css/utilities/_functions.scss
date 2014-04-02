@@ -14,3 +14,22 @@
 @function measure-margin($scale, $measure, $value) {
   @return ($measure/$scale)#{$value};
 }
+
+// A small, internally-used function to remove the units from a given value.
+@function typecsset-strip-units($number) {
+    @return $number / ($number * 0 + 1);
+}
+
+// Line height calc
+
+@function line-height-calc($font-scale, $margin-adjust: "1.5") {
+	@debug "$font-scale: " + $font-scale;
+	$font-size: ms($font-scale);
+	$multiple: 1;
+	$new-base-line-height: $base-line-height;
+	@while $font-size > $new-base-line-height {
+	  $multiple: $multiple + 1;
+	  $new-base-line-height: $base-line-height * $multiple;
+	}
+	@return (($new-base-line-height + $margin-adjust) / typecsset-strip-units($font-size));;
+}

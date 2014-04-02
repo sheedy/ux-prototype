@@ -66,38 +66,7 @@ h5, .h5 {
 %hN {
 	text-rendering: optimizeLegibility; // voodoo to enable ligatures and kerning
 	// line-height: 1; // this fixes huge spaces when a heading wraps onto two lines
-	// margin: $ms-ratio/2 + $type-scale-unit-value 0;
-	// margin-top: 0;
-	// margin-bottom: ms(1, 1rem);
-
-	// grab font-size and determine next highest multiple (add switch for next lowest) of $base-line-height
-	// add difference between old size and next multiple of $base-line-height to $base-line-height
-
-	// $i: ms(5);
-	// $multiple: 1;
-	// $new-base-line-height: 1.5;
-	// @debug "original " + $new-base-line-height;
-	// // @debug ms-list(1, 10, $ms-base, $ms-ratio);
-	// @while $i > $new-base-line-height {
-	//   // .item-#{$i} { width: 2em * $i; }
-	//   $new-base-line-height: $base-line-height * $multiple;
-	//   @debug "new height " + $new-base-line-height;
-	//   $multiple: $multiple + 1;
-	//   // @debug "multiple " + $multiple;
-	// }
-	// @debug "new: " + $new-base-line-height;
-
-	// $testh: $new-base-line-height - 4.21399;
-	// $new-margin: ($base-line-height + $testh) * 2;
-	// @debug $new-margin;
-	// // @if ($new-margin > 1.5) {
-	// // 	margin-bottom: 1.5rem; // needs to be the next value below 1.5 as 1.5 is just added to the bottom and misaligning
-	// // 	@debug "greater";
-	// // }
-	// // @else {
-	// 	margin-bottom: $new-margin + rem;
-	// 	@debug "less";
-	// // }
+	margin-bottom: ($base-line-height * 1) + rem;
 
 	// margin-bottom: $base-line-height * 1 + rem;
 	-webkit-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
@@ -115,88 +84,43 @@ $sizes: tera $tera, giga $giga, mega $mega, alpha $alpha, beta $beta, gamma $gam
 // Sass loop to associate h1-h6 tags with their appropriate greek
 // heading based on a modular scale.
 // for each size in the scale, create a class
-// @each $size in $sizes {
-// 	.#{nth($size, 1)} {
-// 		@include type-scale(nth($size, 2), $font-base, '#{$type-scale-unit-value}', $measure);
-// 	}
-// }
+@each $size in $sizes {
+	.#{nth($size, 1)} {
+		// @include type-scale(nth($size, 2), $font-base, '#{$type-scale-unit-value}', $measure);
+		@include ms-and-vrythm(nth($size, 2));
+	}
+}
 
 // associate h1-h6 tags with their appropriate greek heading
 h1 {
-	// @extend .alpha;
-	// font-size: ms(5);
-
-	$font-size: ms(7);
-	$multiple: 1;
-	$new-base-line-height: 1.5;
-	@debug "original " + $new-base-line-height;
-	// @debug ms-list(1, 10, $ms-base, $ms-ratio);
-	@while $font-size > $new-base-line-height {
-	  // .item-#{$i} { width: 2em * $i; }
-	  $multiple: $multiple + 1;
-	  $new-base-line-height: $base-line-height * $multiple;
-	  @debug "new height " + $new-base-line-height;
-
-	  // @debug "multiple " + $multiple;
-	}
-	@debug "new: " + $new-base-line-height;
-
-	// A small, internally-used function to remove the units from a given value.
-	@function typecsset-strip-units($number) {
-	    @return $number / ($number * 0 + 1);
-	}
-
-	// $testh: $new-base-line-height - 4.21399;
-	// $new-margin: ($base-line-height + $testh) * 2;
-	// @debug $new-margin;
-	// // @if ($new-margin > 1.5) {
-	// // 	margin-bottom: 1.5rem; // needs to be the next value below 1.5 as 1.5 is just added to the bottom and misaligning
-	// // 	@debug "greater";
-	// // }
-	// // @else {
-	// 	margin-bottom: $new-margin + rem;
-	// 	@debug "less";
-	// // }
-
-
-	font-size: $font-size;
-	line-height: (($new-base-line-height + 1.5) / typecsset-strip-units($font-size));
-	margin-bottom: ($base-line-height * 2) + rem;
+	@extend .alpha;
 	@extend %hN;
-	// line-height: (24 / 4.23607) + rem;
-	// Next, we need to make sure the line height of each is 24 pixels.
-	// This means that the h1 at a 24-point font size will have a line height
-	// of 1 em. Here’s the math:
-	// (magic number) ÷ (font size) = (line height)
-	background-color: rgba(255,0,0,0.2);
 }
 
 h2 {
-	// @extend .beta;
-	font-size: ms(1, 1rem);
-	// line-height: #{$base-line-height} / ms(2, 1rem);
+	@extend .beta;
 	@extend %hN;
 }
 
-// h3 {
-// 	@extend .gamma;
-// 	@extend %hN;
-// }
+h3 {
+	@extend .gamma;
+	@extend %hN;
+}
 
-// h4 {
-// 	@extend .delta;
-// 	@extend %hN;
-// }
+h4 {
+	@extend .delta;
+	@extend %hN;
+}
 
-// h5 {
-// 	@extend .epsilon;
-// 	@extend %hN;
-// }
+h5 {
+	@extend .epsilon;
+	@extend %hN;
+}
 
-// h6 {
-// 	@extend .zeta;
-// 	@extend %hN;
-// }
+h6 {
+	@extend .zeta;
+	@extend %hN;
+}
 
 p {
 	// Kerning
