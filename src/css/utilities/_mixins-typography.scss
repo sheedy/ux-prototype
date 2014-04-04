@@ -1,7 +1,7 @@
 // Mixins only
 
-
 @mixin ms-and-vrythm($scale, $margin-adjust: 1.5) {
+// Scale is an integer between 0 and x and used with modular-scale
   font-size: ms($scale);
   line-height: line-height-calc($scale, $margin-adjust);
 }

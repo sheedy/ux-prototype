@@ -3,10 +3,10 @@
 // NOTE: Nothing imported in this file should ever import actual code. It should
 // only import things like variables and mixins.
 
-// External dependencies
+// External dependencies (sourced from 'src/bower_components')
 //------------------------------------------------------------------------------
 
-@import "../../bower_components/modular-scale/stylesheets/modular-scale";
+@import "modular-scale/stylesheets/modular-scale";
 
 // Grid
 // @import "susy"; // requires compass
