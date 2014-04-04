@@ -21,9 +21,10 @@
 }
 
 // Line height calc
-
+// Make $margin-adjust a number that is multipled by line height so we can center
+// just one number
 @function line-height-calc($font-scale, $margin-adjust: "1.5") {
-	@debug "$font-scale: " + $font-scale;
+	// @debug "$font-scale: " + $font-scale;
 	$font-size: ms($font-scale);
 	$multiple: 1;
 	$new-base-line-height: $base-line-height;

@@ -57,23 +57,16 @@ h5, .h5 {
 // <h6 class="giga">Awesome Headline</h6>
 // <p class="tera">a story about a dude</p>
 
-// Our Type Scale is as follows with px fallbacks
-// for IE 6-8 as they do not understand REM units.
-//
-// 18, 21, 24, 36, 48, 60, 72, 90, 117
-
 // styles for all headings, in the style of @csswizardry
 %hN {
 	text-rendering: optimizeLegibility; // voodoo to enable ligatures and kerning
-	// line-height: 1; // this fixes huge spaces when a heading wraps onto two lines
-	margin-bottom: ($base-line-height * 1) + rem;
-
-	// margin-bottom: $base-line-height * 1 + rem;
 	-webkit-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
 	-moz-font-feature-settings: 'dlig=1, liga=1, lnum=1, kern=1';
 	-ms-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
 	-o-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
 	font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
+
+	margin-bottom: ($base-line-height * 1) + rem;
 }
 
 // Multi-dimensional array, where:
@@ -123,26 +116,59 @@ h6 {
 }
 
 p {
+	margin: 0 0 #{$base-line-height}rem 0;
+	text-rendering: optimizeLegibility;
 	// Kerning
 	// http://blog.typekit.com/2014/02/05/kerning-on-the-web/
-	margin: 0 0 #{$base-line-height}rem 0;
-	// margin: 0;
-	text-rendering: optimizeLegibility;
 	font-feature-settings: "kern" 1;
 	-webkit-font-feature-settings: "kern";
 	-moz-font-feature-settings: "kern";
 	-moz-font-feature-settings: "kern=1";
 	font-kerning: normal;
 
-	-webkit-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
-	-moz-font-feature-settings: 'kern=1, onum=1, liga=1';
-	-ms-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
-	-o-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
-	font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
+	// Sass supports “variable arguments,” which are arguments at the end of
+	// a mixin or function declaration that take all leftover arguments and
+	// package them up as a list. These arguments look just like normal
+	// arguments, but are followed by ...
+	@mixin font-feature-settings($features...) {
+		// Syntax from http://stackoverflow.com/questions/15160897/font-feature-settings-what-is-the-correct-syntax
+		@debug "$features = " + $features;
+		$setting-length: length($features) - 1;
+		// @debug list-separator($features);
+		$last-val: nth($features, $setting-length + 1);
+		$i: 0;
+
+		@while $i < $setting-length {
+			@each $feature in $features {
+				@if ($feature == $last-val) {
+					@debug $feature;
+				} @else {
+					@debug $feature + ", ";
+					$i: $i + 1;
+				}
+			}
+		}
+
+
+		@debug "last val = " + $last-val;
+
+		-webkit-font-feature-settings: "kern", "liga", "case"; /* No variation */
+		   -moz-font-feature-settings: "kern=1", "liga=1", "case=1"; /* Firefox 4.0 to 14.0 */
+		   -moz-font-feature-settings: "kern", "liga" , "case"; /* Firefox 15.0 onwards */
+		   -moz-font-feature-settings: "kern" 1, "liga" 1, "case" 1; /* Firefox 15.0 onwards explicitly set feature values */
+		        font-feature-settings: "kern", "liga", "case"; /* No variation */
+	}
+
+	@include font-feature-settings(onum, kern, other, another);
+	// -webkit-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
+	// -moz-font-feature-settings: 'kern=1, onum=1, liga=1';
+	// -ms-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
+	// -o-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
+	// font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
 
 	code {
-		padding: 2px 6px 3px;
-		margin: 0 2px;
+		padding: $base-line-height/6 + rem $base-line-height/3 + rem;
+		margin: 0 $base-line-height/6 + rem;
 		border: 1px solid lighten($mid-grey, 50);
 		background-color: lighten($grey, 75);
 	}
@@ -173,7 +199,7 @@ blockquote {
 }
 
 pre {
-	padding: 10px 16px;
+	padding: $base-line-height/2 + rem 16px;
 	background-color: $mid-grey;
 	color: $white;
 	overflow: auto;
