@@ -8,7 +8,7 @@
 // ==================================
 
 // "measure" should effect line-height
-$font-size-unitless:                                    18; // the font size in pixels (no units specified)
+$font-size-unitless:                                    16; // the font size in pixels (no units specified)
 $font-size:                                             $font-size-unitless/16 * 100; // percentage value (16 * 112.5% = 18px) - scale origin
 $font-base:                                             16 * ($font-size/100); // converts our percentage to a pixel value
 

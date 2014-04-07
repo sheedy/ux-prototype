@@ -7,10 +7,10 @@ module.exports = {
 		options: {							// Target options
 			style: 'expanded', // nested | compact | compressed | expanded
 			precision: 6,
-			trace: true,
-			sourcemap: true,
-			debugInfo: true,
-			lineNumbers: true,
+			trace: false,
+			sourcemap: false,
+			debugInfo: false,
+			lineNumbers: false,
 			loadPath: ["src/bower_components"],
 			// require: "susy",
 			bundleExec: false,
