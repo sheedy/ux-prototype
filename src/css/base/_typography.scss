@@ -24,27 +24,6 @@
 	word-wrap: auto;
 }
 
-h1, .h1 {
-
-}
-
-h2, .h2 {
-
-}
-
-h3, .h3 {
-
-}
-
-h4, .h4 {
-
-}
-
-h5, .h5 {
-
-}
-
-
 // $Styles $Headings
 // -------------------------------------//
 
@@ -60,57 +39,51 @@ h5, .h5 {
 // styles for all headings, in the style of @csswizardry
 %hN {
 	text-rendering: optimizeLegibility; // voodoo to enable ligatures and kerning
-	-webkit-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
-	-moz-font-feature-settings: 'dlig=1, liga=1, lnum=1, kern=1';
-	-ms-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
-	-o-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
-	font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
-
 	margin-bottom: ($base-line-height * 1) + rem;
 }
 
 // Multi-dimensional array, where:
 // the first value is the name of the class
 // and the second value is the variable for the size
-$sizes: tera $tera, giga $giga, mega $mega, alpha $alpha, beta $beta, gamma $gamma, delta $delta, epsilon $epsilon, zeta $zeta;
+$size-list: tera $tera, giga $giga, mega $mega, alpha $alpha, beta $beta, gamma $gamma, delta $delta, epsilon $epsilon, zeta $zeta;
 
 // Sass loop to associate h1-h6 tags with their appropriate greek
 // heading based on a modular scale.
 // for each size in the scale, create a class
-@each $size in $sizes {
-	.#{nth($size, 1)} {
+@each $size-item in $size-list {
+	.#{nth($size-item, 1)} {
 		// @include type-scale(nth($size, 2), $font-base, '#{$type-scale-unit-value}', $measure);
-		@include ms-and-vrythm(nth($size, 2));
+		@include ms-and-vrythm(nth($size-item, 2));
 	}
 }
 
 // associate h1-h6 tags with their appropriate greek heading
-h1 {
+h1, .h1 {
 	@extend .alpha;
 	@extend %hN;
 }
 
-h2 {
+h2, .h2 {
 	@extend .beta;
 	@extend %hN;
 }
 
-h3 {
+h3, .h3 {
 	@extend .gamma;
 	@extend %hN;
 }
 
-h4 {
+h4, .h4 {
 	@extend .delta;
 	@extend %hN;
 }
 
-h5 {
+h5, .h5 {
 	@extend .epsilon;
 	@extend %hN;
 }
 
-h6 {
+h6, .h6 {
 	@extend .zeta;
 	@extend %hN;
 }
@@ -118,53 +91,8 @@ h6 {
 p {
 	margin: 0 0 #{$base-line-height}rem 0;
 	text-rendering: optimizeLegibility;
-	// Kerning
-	// http://blog.typekit.com/2014/02/05/kerning-on-the-web/
-	font-feature-settings: "kern" 1;
-	-webkit-font-feature-settings: "kern";
-	-moz-font-feature-settings: "kern";
-	-moz-font-feature-settings: "kern=1";
-	font-kerning: normal;
-
-	// Sass supports “variable arguments,” which are arguments at the end of
-	// a mixin or function declaration that take all leftover arguments and
-	// package them up as a list. These arguments look just like normal
-	// arguments, but are followed by ...
-	@mixin font-feature-settings($features...) {
-		// Syntax from http://stackoverflow.com/questions/15160897/font-feature-settings-what-is-the-correct-syntax
-		@debug "$features = " + $features;
-		$setting-length: length($features) - 1;
-		// @debug list-separator($features);
-		$last-val: nth($features, $setting-length + 1);
-		$i: 0;
-
-		@while $i < $setting-length {
-			@each $feature in $features {
-				@if ($feature == $last-val) {
-					@debug $feature;
-				} @else {
-					@debug $feature + ", ";
-					$i: $i + 1;
-				}
-			}
-		}
-
-
-		@debug "last val = " + $last-val;
-
-		-webkit-font-feature-settings: "kern", "liga", "case"; /* No variation */
-		   -moz-font-feature-settings: "kern=1", "liga=1", "case=1"; /* Firefox 4.0 to 14.0 */
-		   -moz-font-feature-settings: "kern", "liga" , "case"; /* Firefox 15.0 onwards */
-		   -moz-font-feature-settings: "kern" 1, "liga" 1, "case" 1; /* Firefox 15.0 onwards explicitly set feature values */
-		        font-feature-settings: "kern", "liga", "case"; /* No variation */
-	}
-
-	@include font-feature-settings(onum, kern, other, another);
-	// -webkit-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
-	// -moz-font-feature-settings: 'kern=1, onum=1, liga=1';
-	// -ms-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
-	// -o-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
-	// font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
+	// Kerning for OTF http://blog.typekit.com/2014/02/05/kerning-on-the-web/
+	@include font-feature-settings(kern);
 
 	code {
 		padding: $base-line-height/6 + rem $base-line-height/3 + rem;
@@ -203,4 +131,17 @@ pre {
 	background-color: $mid-grey;
 	color: $white;
 	overflow: auto;
+}
+
+
+/*
+ * Addresses font-family inconsistency between 'textarea' and other form elements.
+ */
+
+// html,
+button,
+input,
+select,
+textarea {
+    font-family: sans-serif;
 }
