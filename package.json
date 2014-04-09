@@ -52,7 +52,8 @@
     "grunt-deps-ok": "^0.1.8",
     "grunt-processhtml": "^0.3.0",
     "grunt-targethtml": "^0.2.6",
-    "grunt-preprocess": "^4.0.0"
+    "grunt-preprocess": "^4.0.0",
+    "grunt-release": "^0.7.0"
   },
   "engines": {
     "node": ">=0.8.0"

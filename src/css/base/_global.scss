@@ -4,72 +4,53 @@
 *
 */
 
-/*
- * 1. Corrects text resizing oddly in IE6/7 when body font-size is set using em units
- *    http://clagnut.com/blog/348/#c790
- * 2. Prevents iOS text size adjust after orientation change, without disabling user zoom
- *    http://www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/
- */
+// 1. Corrects text resizing oddly in IE6/7 when body font-size is set using em units
+//    http://clagnut.com/blog/348/#c790
+// 2. Prevents iOS text size adjust after orientation change, without disabling user zoom
+//    http://www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/
+
+// Box sizing handled by neat
+// * {
+//   @include box-sizing(border-box);
+// }
 
 html {
-  overflow-y: scroll;
-  min-height: 100%;
+  overflow-y:               scroll;
+  min-height:               100%;
 
-  font-family: $font-family;
-  font-size: $font-size * 1%; // 1 (* 1% to output as a percentage)
-  line-height: $base-line-height;
-  font-weight: $font-weight;
-  color: lighten($black, 20%);
-  -webkit-text-size-adjust: $font-size * 1%; // 2
-  -ms-text-size-adjust: $font-size * 1%; // 2
+  font-family:              $font-family;
+  font-size:                $font-base-size-percentage; // 1
+  line-height:              $base-line-height;
+  font-weight:              $font-weight;
+  color:                    lighten($black, 20%);
+
+  -webkit-text-size-adjust: $font-base-size-percentage; // 2
+  -ms-text-size-adjust:     $font-base-size-percentage; // 2
 
   @include font-smooth(antialiased);
 }
 
-/*
- * Addresses margins handled incorrectly in IE6/7
- */
-
 body {
-  margin: 0 auto;
-  padding: 0;
+  // margin: 0;
+  // padding: 0;
   background-color: lighten($bg-color, 7%);
-
   // Ala Trent Walton
   @include css-hyphens(auto);
-
   // normal: Indicates that lines may only break at normal word break points.
   // break-word : Indicates that normally unbreakable words may be broken at ...
   // arbitrary points if there are no otherwise acceptable break points in the line.
   @extend %breakword;
-
-  // debug
-  @if $debug-baseline-type {
-    @include debug-baseline($debug-baseline-type);
-  }
-
-  &:before {
-    // @include debug-baseline-and-grid;
-  }
-
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  height: auto;
-  // -webkit-text-size-adjust: none; // will prevent the user to zoom in or out the Web page on mobile browsers
-  // @include box-sizing(border-box);
 }
 
 hr {
-  background: $border-color;
+  // background: $border-color;
   border: none;
-  height: 1px;
-  margin: 15px 0;
+  // height: 1px;
+  margin: $base-line-height + rem 0;
 }
 
 .wrapper {
-	width: $body-width;
-	margin: 0 auto;
+	// width: $body-width;
+	// margin: 0 auto;
+  @include outer-container;
 }
