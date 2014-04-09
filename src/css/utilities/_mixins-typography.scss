@@ -1,9 +1,16 @@
 // Mixins only
 
+@mixin vrythm($size, $margin-adjust: $base-line-height) {
+  // Scale is an integer between 0 and x and used with modular-scale
+  font-size: $size + px;
+  font-size: calc-rem($size);
+  line-height: line-height-calc($size, $margin-adjust);
+}
+
 @mixin ms-and-vrythm($scale, $margin-adjust: $base-line-height) {
-// Scale is an integer between 0 and x and used with modular-scale
+  // Scale is an integer between 0 and x and used with modular-scale
   font-size: ms($scale);
-  line-height: line-height-calc($scale, $margin-adjust);
+  line-height: ms-line-height-calc($scale, $margin-adjust);
 }
 
 //http://trentwalton.com/2011/09/07/css-hyphenation
@@ -40,21 +47,12 @@
 // Rem font-sizing
 //------------------------------------------------------------------------------
 
-// This works with the $base-font-size variable, which MUST be set on <html>.
-// <html> is the root for rem calculations. Without it (unless the base is 16px)
-// the calculations will be incorrect.
-
-@mixin base-font-size($pixels: $base-font-size) {
-  font-size: $pixels + px;
-  font-size: $pixels / 16 * 100%;
-}
-
 // This function will take the desired pixel result and provide a pixel fallback
 // version as well as rem version.  Do not include "px" units as argument.
 
-@mixin font-size($pixels: $base-font-size) {
-  font-size: $pixels + px;
-  font-size: $pixels / $base-font-size + rem;
+@mixin font-size($size) {
+  font-size: $size + px;
+  font-size: calc-rem($size);
 }
 
 // ----------------------------------------------------------------------------

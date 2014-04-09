@@ -1,13 +1,22 @@
+// NOTE: Nothing imported in this file should ever output actual code. It should
+// only import things like variables and mixins.
+//
 // ==================================
 //           Debugging
 // ==================================
 
+$debug:                          false;
 $debug-baseline:                 true;
-$debug-baseline-type:            stroke; // stroke | stripe
+$debug-baseline-type:            col-stroke; // stroke | stripe | col-stroke
 $debug-baseline-stripe-color:    rgba(188, 238, 255, 0.5);
 $debug-baseline-stroke-color:    rgba(56,255,255, 0.8);
 $debug-baseline-stroke-width:    0.05em;
 $debug-baseline-stripe-width:    50%;
 $debug-baseline-offset:          0; // for fine tuning alignment adjustments
 $debug-column-color:             rgba(200, 0, 0, 0.2);
-$base-line-height-granular:      ($base-line-height / 2);
+
+// Grid
+$visual-grid:                    false;
+$visual-grid-color:              cyan;
+$visual-grid-index:              back;
+$visual-grid-opacity:            0.1;

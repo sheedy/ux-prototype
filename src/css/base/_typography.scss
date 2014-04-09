@@ -39,7 +39,8 @@
 // styles for all headings, in the style of @csswizardry
 %hN {
 	text-rendering: optimizeLegibility; // voodoo to enable ligatures and kerning
-	margin-bottom: ($base-line-height * 1) + rem;
+	// margin: 0 0 ($base-line-height * 1) + rem 0;
+	margin: 0;
 }
 
 // Multi-dimensional array, where:
@@ -52,7 +53,7 @@ $size-list: tera $tera, giga $giga, mega $mega, alpha $alpha, beta $beta, gamma 
 // for each size in the scale, create a class
 @each $size-item in $size-list {
 	.#{nth($size-item, 1)} {
-		// @include type-scale(nth($size, 2), $font-base, '#{$type-scale-unit-value}', $measure);
+		// @include type-scale(nth($size, 2), $font-size-unitless, '#{$type-scale-unit-value}', $measure);
 		@include ms-and-vrythm(nth($size-item, 2));
 	}
 }
@@ -131,8 +132,8 @@ pre {
 	background-color: $mid-grey;
 	color: $white;
 	overflow: auto;
+	margin: $base-line-height + rem 0;
 }
-
 
 /*
  * Addresses font-family inconsistency between 'textarea' and other form elements.

@@ -1,33 +1,26 @@
 @charset "utf-8";
 
-// NOTE: Nothing imported in this file should ever import actual code. It should
-// only import things like variables and mixins.
+// Variables
+//------------------------------------------------------------------------------
+@import "modular-scale/stylesheets/modular-scale";
+@import "utilities/variables";
+@import "utilities/variables-debug";
 
 // External dependencies (sourced from 'src/bower_components')
 //------------------------------------------------------------------------------
 
-@import "modular-scale/stylesheets/modular-scale";
-
-// Grid
+// Bourbon
+// http://bourbon.io/
+@import "bourbon/app/assets/stylesheets/bourbon";
+// Bourbon Neat (grid)
+// http://neat.bourbon.io/
+@import "neat/app/assets/stylesheets/neat";
+@import "neat/app/assets/stylesheets/neat-helpers";
+// Susy (grid)
 // @import "susy"; // requires compass
 
-// Compass
-
-/* ==========================================================================
-   Reset
-========================================================================== */
-// @import "compass/reset";
-// @import "compass/typography/links";
-// @import "compass/css3/border-radius"; // using locally-modified bi-app-sass instead
-// @import "compass/css3/box-shadow";
-// @import "compass/css3/transition";
-// @import "compass/css3/text-shadow";
-
-
-// Variables
-//------------------------------------------------------------------------------
-
-@import "utilities/variables";
+// Normalize
+@import "normalize-scss/normalize";
 
 
 // Utilities
@@ -60,12 +53,16 @@
 @import "base/forms/textarea";
 @import "base/forms/form";
 
+/* ==========================================================================
+   Layout
+========================================================================== */
+
+@import "layout/grid";
 
 /* ==========================================================================
    Objects
 ========================================================================== */
 
-// @import "objects/grid";
 @import "objects/box";
 @import "objects/button";
 @import "objects/tabs";

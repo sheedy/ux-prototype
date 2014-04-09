@@ -1,3 +1,6 @@
+// NOTE: Nothing imported in this file should ever output actual code. It should
+// only import things like variables and mixins.
+//
 // ==========================================================================
 // Variables
 // ==========================================================================
@@ -8,12 +11,12 @@
 // ==================================
 
 // "measure" should effect line-height
-$font-size-unitless:                                    16; // the font size in pixels (no units specified)
-$font-size:                                             $font-size-unitless/16 * 100; // percentage value (16 * 112.5% = 18px) - scale origin
-$font-base:                                             16 * ($font-size/100); // converts our percentage to a pixel value
+$font-base-size-unitless:                               18; // the font size in pixels (no units specified)
+$font-base-size-percentage-unitless:                    $font-base-size-unitless/16 * 100; // percentage value (16 * 112.5% = 18px) - scale origin
+$font-base-size-percentage:                             $font-base-size-percentage-unitless * 1%;
 
 $base-line-height:                                      1.5; // 16px * 1.5 = 24px
-$measure:                                               $font-base * $base-line-height;
+$measure:                                               $font-base-size-unitless * $base-line-height;
 
 $font-family:                                           Cambria, Georgia, "Times New Roman", Times, serif;
 $font-family-alt:                                       Arial, "Helvetica Neue", Helvetica, sans-serif;
@@ -24,10 +27,10 @@ $font-weight:                                           normal;
 // Modular scale
 // https://github.com/Team-Sass/modular-scale
 //
-// Use http://type-scale.com/ or http://modularscale.com/ to determine your ratio
-
+// Use http://type-scale.com/ or http://modularscale.com/ to determine your
+// ratio and choose from here https://github.com/Team-Sass/modular-scale#ratios
 $ms-base: 1rem;
-$ms-ratio: $golden;
+$ms-ratio: $fourth;
 
 // Font size list (steps up the modular scale)
 $tera:                                                  8; // 117 = 18 × 6.5
@@ -55,6 +58,13 @@ $columns:                 12;
 $column-width: 			  $body-width / $columns - $gutter-width;
 $grid-padding:            20px;
 $show-grid-backgrounds:   false;
+
+// Bourbon Neat grid settings
+// $border-box-sizing: false;
+$column: $column-width;
+$gutter: $gutter-width;
+$grid-columns: $columns;
+$max-width: $body-width;
 
 // -----  End of Grid  ------
 
@@ -149,18 +159,3 @@ $desk-h: 				  1200px;
 $border-radius-default:   4px;
 
 // -----  End of Layout  ------
-
-
-// ==================================
-//           Debugging
-// ==================================
-
-$debug:                          true;
-$debug-baseline:                 true;
-$debug-baseline-type:            stroke; // stroke | stripe
-$debug-baseline-stripe-color:    rgba(188, 238, 255, 0.5);
-$debug-baseline-stroke-color:    rgba(56,255,255, 0.8);
-$debug-baseline-stroke-width:    0.05em;
-$debug-baseline-stripe-width:    50%;
-$debug-baseline-offset:          0; // for fine tuning alignment adjustments
-$debug-column-color:             rgba(200, 0, 0, 0.2);

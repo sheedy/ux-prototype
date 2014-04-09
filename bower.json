@@ -8,7 +8,10 @@
     "animate.css": "~2.1.1",
     "modular-scale": "~2.0.4",
     "fittext": "*",
-    "letteringjs": "~0.6.1"
+    "letteringjs": "~0.6.1",
+    "neat": "~1.6.0",
+    "bourbon": "~3.1.8",
+    "normalize-scss": "~3.0.1"
   },
   "devDependencies": {}
 }
