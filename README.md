@@ -23,7 +23,7 @@ Enable the *building* and *demonstration* of **tangible products** and reduce *d
 
 All features are optional, if you don't want to use one just comment it out in the appropriate ``tasks/task-name.js`` file. Everything is highly configurable and automated with [Grunt](http://gruntjs.com/).
 
-- Modular templating and partial/includes system ([Handlebars](http://handlebarsjs.com/)) – [Asemble](http://assemble.io)
+- Modular templating and partial/includes system ([Handlebars](http://handlebarsjs.com/)) – [Assemble](http://assemble.io)
 - CSS pre-processing – [SASS](http://sass-lang.com/)
 - [Livereload](https://github.com/intesso/connect-livereload) your designs instantly after saving **on multiple devices** (without a browser plugin)
 - SVG conversion to PNG and Base64 encoded CSS for fallback - [Grunticon](http://www.grumpicon.com/)
