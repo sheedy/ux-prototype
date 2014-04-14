@@ -43,3 +43,5 @@ Thumbs.db
 /node_modules/
 /src/bower_components/
 /build
+/vendor
+.bundle

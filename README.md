@@ -47,14 +47,14 @@ The Sass/CSS adheres somewhat closely to the following guidelines (needs cleanup
 *NOTE: This will eventually all be handled by a script (optional).*
 
 
-If you are unfamiliar with terms like homebrew, npm, and ruby, or are having difficulty with the instructions below, read the [full install instructions](docs/Install.md).
+If you are unfamiliar with terms like homebrew, npm, ruby and bundler or are having difficulty with the instructions below, read the [full install instructions](docs/Install.md).
 
 If you already have node installed, read on.
 
-#### SASS and Compass
+#### SASS, Compass and Bundler
 
 ```
-gem install sass compass
+gem install sass compass bundler
 ```
 
 #### Grunt & Bower
@@ -66,7 +66,7 @@ npm install -g grunt grunt-cli bower
 #### Dependencies
 
 ```
-npm install && bower install
+npm install && bower install && bundle install
 ```
 
 #### Growl

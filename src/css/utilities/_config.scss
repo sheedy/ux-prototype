@@ -1,26 +1,28 @@
-@charset "utf-8";
-
 // Variables
 //------------------------------------------------------------------------------
+
 @import "modular-scale/stylesheets/modular-scale";
 @import "utilities/variables";
-@import "utilities/variables-debug";
+
+
+
 
 // External dependencies (sourced from 'src/bower_components')
 //------------------------------------------------------------------------------
 
-// Bourbon
-// http://bourbon.io/
+// Bourbon http://bourbon.io/
 @import "bourbon/app/assets/stylesheets/bourbon";
-// Bourbon Neat (grid)
-// http://neat.bourbon.io/
+// Bourbon Neat (grid) http://neat.bourbon.io/
 @import "neat/app/assets/stylesheets/neat";
 @import "neat/app/assets/stylesheets/neat-helpers";
+
 // Susy (grid)
 // @import "susy"; // requires compass
 
 // Normalize
 @import "normalize-scss/normalize";
+
+
 
 
 // Utilities
@@ -29,7 +31,8 @@
 @import "utilities/functions";
 @import "utilities/mixins";
 @import "utilities/mixins-typography";
-@import "utilities/mixins-debug";
+
+
 
 
 /* ==========================================================================
@@ -39,25 +42,19 @@
 @import "base/global";
 @import "base/accessibility";
 @import "base/typography";
-@import "base/list";
-@import "base/table";
-// @import "base/icon";
-@import "base/header";
-// Forms
-@import "base/forms/label";
-@import "base/forms/checkbox";
-@import "base/forms/multiselect-box";
-@import "base/forms/radio";
-@import "base/forms/input";
-@import "base/forms/select";
-@import "base/forms/textarea";
-@import "base/forms/form";
+
+
+
 
 /* ==========================================================================
    Layout
 ========================================================================== */
 
 @import "layout/grid";
+@import "layout/header";
+
+
+
 
 /* ==========================================================================
    Objects
@@ -68,12 +65,35 @@
 @import "objects/tabs";
 
 
+
+
 /* ==========================================================================
    Generic
 ========================================================================== */
 
-@import "generic/clearfix";
-@import "generic/state";
+@import "generic/list";
+@import "generic/table";
+// Forms
+@import "generic/forms/label";
+@import "generic/forms/checkbox";
+@import "generic/forms/multiselect-box";
+@import "generic/forms/radio";
+@import "generic/forms/input";
+@import "generic/forms/select";
+@import "generic/forms/textarea";
+@import "generic/forms/form";
+
+
+
+
+/* ==========================================================================
+   Helpers
+========================================================================== */
+
+@import "helpers/clearfix";
+@import "helpers/state";
+
+
 
 
 /* ==========================================================================
@@ -81,12 +101,17 @@
 ========================================================================== */
 
 // Fix these
-@import "generic/shame";
+@import "helpers/shame";
+
+
 
 
 /* ==========================================================================
    Debug
 ========================================================================== */
 
-// Fix these
+// Remove for production
 @import "utilities/debug"
+
+
+

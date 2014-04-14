@@ -33,19 +33,21 @@ $ms-base: 1rem;
 $ms-ratio: $fourth;
 
 // Font size list (steps up the modular scale)
-$tera:                                                  8; // 117 = 18 × 6.5
-$giga:                                                  7; // 90 = 18 × 5
-$mega:                                                  6; // 72 = 18 × 4
-$alpha:                                                 5; // 60 = 18 × 3.3333
-$beta:                                                  4; // 48 = 18 × 2.6667
-$gamma:                                                 3; // 36 = 18 × 2
-$delta:                                                 2; // 24 = 18 × 1.3333
-$epsilon:                                               1; // 21 = 18 × 1.1667
-$zeta:                                                  0; // 18 = 18 × 1
+$tera:                                                  8;
+$giga:                                                  7;
+$mega:                                                  6;
+$alpha:                                                 5;
+$beta:                                                  4;
+$gamma:                                                 3;
+$delta:                                                 2;
+$epsilon:                                               1;
+$zeta:                                                  0;
 
 $type-scale-unit-value: rem !default;
 
 // -----  End of Typography  ------
+
+
 
 
 // ============================
@@ -60,13 +62,13 @@ $grid-padding:            20px;
 $show-grid-backgrounds:   false;
 
 // Bourbon Neat grid settings
-// $border-box-sizing: false;
 $column: $column-width;
 $gutter: $gutter-width;
 $grid-columns: $columns;
 $max-width: $body-width;
 
 // -----  End of Grid  ------
+
 
 
 
@@ -125,6 +127,8 @@ $focus-field-color: 	  $pale-yellow;
 // -----  End of Colours  ------
 
 
+
+
 // ====================================
 //           Device sizes
 // ====================================
@@ -141,6 +145,8 @@ $desk-h: 				  1200px;
 // -----  End of Device sizes  ------
 
 
+
+
 // =============================
 //           Forms
 // =============================
@@ -151,6 +157,8 @@ $desk-h: 				  1200px;
 // -----  End of Forms  ------
 
 
+
+
 // ==============================
 //           Layout
 // ==============================
@@ -159,3 +167,6 @@ $desk-h: 				  1200px;
 $border-radius-default:   4px;
 
 // -----  End of Layout  ------
+
+
+
