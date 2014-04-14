@@ -8,11 +8,11 @@ module.exports = {
 		assets: '<%= temp %>',
 		data: [
 			'<%= src %>/data/*.json',
-			'<%= src %>/patterns/**/*.json'
+			'<%= src %>/docs/patterns/**/*.json'
 		],
 		partials: [
 			'<%= src %>/content/partials/**/*.hbs',
-			'<%= src %>/patterns/**/*.hbs',
+			'<%= src %>/docs/patterns/**/*.hbs',
 			'<%= src %>/content/layouts/*.hbs'
 		],
 		layoutdir: 'src/content/templates',
