@@ -12,7 +12,6 @@ Avoid having to wait for docs to install when installing gems.
 
 ```
 echo 'gem: --no-rdoc --no-ri' >> ~/.gemrc
-
 ```
 #### Install rbenv
 
@@ -44,10 +43,15 @@ rbenv global 2.0.0-p247
 brew install node
 ```
 
-#### [Sass](sass-lang.com)
+#### [Sass](sass-lang.com), [Compass](http://compass-style.org/), [Bundler](http://bundler.io/)
 
 ```
-gem install sass
+gem install sass compass bundler
+```
+
+```
+mkdir ~/.bundle
+echo 'BUNDLE_PATH: vendor/bundle' >> ~/.bundle/config
 ```
 
 #### [Grunt](http://gruntjs.com/) & [Bower](http://bower.io/)

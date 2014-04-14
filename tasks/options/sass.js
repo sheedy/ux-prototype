@@ -8,12 +8,12 @@ module.exports = {
 			style: 'expanded', // nested | compact | compressed | expanded
 			precision: 6,
 			trace: false,
-			sourcemap: false,
-			debugInfo: false,
-			lineNumbers: false,
+			sourcemap: true,
+			debugInfo: true,
+			lineNumbers: true,
 			loadPath: ["src/bower_components"],
 			// require: "susy",
-			bundleExec: false,
+			bundleExec: true,
 			// banner: "/* Test banner */", // Can't be used if you use the sourcemap option.
 		},
 		files: [{
@@ -29,13 +29,13 @@ module.exports = {
 		options: {							// Target options
 			style: 'expanded', // nested | compact | compressed | expanded
 			precision: 6,
-			trace: true,
+			trace: false,
 			sourcemap: false,
 			debugInfo: false,
 			lineNumbers: false,
 			loadPath: ["src/bower_components"],
 			// require: "susy",
-			bundleExec: false,
+			bundleExec: true,
 			// banner: "/* Test banner */", // Can't be used if you use the sourcemap option.
 		},
 		files: [{
