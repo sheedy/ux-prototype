@@ -11,8 +11,8 @@ module.exports = {
 					'.tmp/js/*.min.js',
 					'http://use.typekit.net/sea5yvm.js',
 				],
-				theme: 'src/styleguide/theme.css',
-				template: 'src/styleguide/template.hbs',
+				theme: 'src/docs/styleguide/theme.css',
+				template: 'src/docs/styleguide/template.hbs',
 				// readme: 'src/assets/sass/readme.md',
 				highlight: 'monokai',
 				excludeMissing: false
@@ -25,7 +25,7 @@ module.exports = {
 					// 'generic/**/*.{scss,sass}',
 					'objects/**/*.{scss,sass}'
 				],
-				dest: '.tmp/styleguide/'
+				dest: '.tmp/docs/styleguide/'
 			}]
 		}
 
