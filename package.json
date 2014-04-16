@@ -54,7 +54,8 @@
     "grunt-targethtml": "^0.2.6",
     "grunt-preprocess": "^4.0.0",
     "grunt-release": "^0.7.0",
-    "grunt-takana": "^1.0.4"
+    "grunt-takana": "^1.0.4",
+    "grunt-scsslint": "^0.1.0"
   },
   "engines": {
     "node": ">=0.8.0"
