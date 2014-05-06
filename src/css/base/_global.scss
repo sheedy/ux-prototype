@@ -50,7 +50,16 @@ hr {
 }
 
 .wrapper {
-	// width: $body-width;
-	// margin: 0 auto;
-  @include outer-container;
+    // width: $body-width;
+    // margin: 0 auto;
+    @include outer-container;
+}
+
+// Allow JS to detect media queries
+// source: http://adactio.com/journal/5429/
+@media all and (min-width: 45em) {
+    body:after {
+        content: 'widescreen';
+        display: none;
+    }
 }
