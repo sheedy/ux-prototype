@@ -1,0 +1,109 @@
+linters:
+  BorderZero:
+    enabled: true
+
+  CapitalizationInSelector:
+    enabled: false
+
+  ColorKeyword:
+    enabled: true
+
+  Comment:
+    enabled: false
+
+  DebugStatement:
+    enabled: true
+
+  DeclarationOrder:
+    enabled: false
+
+  DuplicateProperty:
+    enabled: false
+
+  EmptyLineBetweenBlocks:
+    enabled: false
+    ignore_single_line_blocks: false
+
+  EmptyRule:
+    enabled: false
+
+  FinalNewline:
+    enabled: false
+    present: false
+
+  HexFormat:
+    enabled: false
+
+  IdWithExtraneousSelector:
+    enabled: false
+
+  Indentation:
+    enabled: false
+    width: 2
+
+  LeadingZero:
+    enabled: false
+    style: exclude_zero # or 'include_zero'
+
+  NameFormat:
+    enabled: false
+    convention: hyphenated_lowercase # or 'BEM', or a regex pattern
+
+  PlaceholderInExtend:
+    enabled: false
+
+  PropertySortOrder:
+    enabled: false
+
+  PropertySpelling:
+    enabled: false
+    extra_properties: []
+
+  SelectorDepth:
+    enabled: false
+    max_depth: 3
+
+  Shorthand:
+    enabled: false
+
+  SingleLinePerSelector:
+    enabled: false
+
+  SpaceAfterComma:
+    enabled: false
+
+  SpaceAfterPropertyColon:
+    enabled: false
+
+  SpaceAfterPropertyName:
+    enabled: false
+
+  SpaceBeforeBrace:
+    enabled: false
+    allow_single_line_padding: false
+
+  SpaceBetweenParens:
+    enabled: false
+    spaces: 0
+
+  StringQuotes:
+    enabled: false
+    style: single_quotes # or double_quotes
+
+  TrailingSemicolonAfterPropertyValue:
+    enabled: false
+
+  UnnecessaryMantissa:
+    enabled: false
+
+  UrlFormat:
+    enabled: false
+
+  UrlQuotes:
+    enabled: false
+
+  ZeroUnit:
+    enabled: false
+
+  Compass::*:
+    enabled: false
