@@ -1,0 +1,27 @@
+#/usr/bin/env bash
+# MIT © Sindre Sorhus - sindresorhus.com
+# forked by Gianluca Guarini
+#
+# git hook to run a command after `git pull` if a specified file was changed
+# Run `chmod +x post-merge` to make it executable then put it into `.git/hooks/`.
+
+changed_files="$(git diff-tree -r --name-only --no-commit-id ORIG_HEAD HEAD)"
+
+check_run() {
+  echo "$changed_files" | grep --quiet "$1" && eval "$2"
+}
+
+# `npm install` and `npm prune` if the `package.json` file gets changed
+# to update all the nodejs ( grunt ) dependencies deleting the unused packages (not listed into the  `package.json` file)
+check_run package.json "npm install && npm prune"
+
+# `bower install` and `bower prune` if the `bower.json` file gets changed
+# to install all the frontend dependencies removing the unused packages ( not listed into the  `bower.json` file )
+check_run bower.json "bower install && bower prune"
+
+# `bundle install` if `Gemfile` file gets changed
+# to install/update all the gems
+check_run Gemfile "bundle install"
+
+
+# Run `chmod +x post-merge` to make it executable then put it into `.git/hooks/`
