@@ -16,6 +16,7 @@
   },
   "devDependencies": {
     "jquery.adaptive-backgrounds": "https://github.com/briangonzalez/jquery.adaptive-backgrounds.js",
-    "colors": "~0.2.0"
+    "colors": "~0.2.0",
+    "signet": "~0.4.7"
   }
 }
