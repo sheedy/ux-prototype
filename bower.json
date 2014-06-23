@@ -11,7 +11,11 @@
     "letteringjs": "~0.6.1",
     "neat": "~1.6.0",
     "bourbon": "~3.1.8",
-    "normalize-scss": "~3.0.1"
+    "normalize-scss": "~3.0.1",
+    "RulersGuides.js": "https://github.com/mark-rolich/RulersGuides.js"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "jquery.adaptive-backgrounds": "https://github.com/briangonzalez/jquery.adaptive-backgrounds.js",
+    "colors": "~0.2.0"
+  }
 }

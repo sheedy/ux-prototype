@@ -20,7 +20,8 @@ module.exports = function (grunt) {
 	require('load-grunt-config')(grunt, {
 		configPath: path.join(process.cwd(), 'tasks/options'), // path to task.js files, defaults to grunt dir
 		init: true,                                            // auto grunt.initConfig
-		config: {                                              // additional config vars
+		loadTasks: false,
+        config: {                                              // additional config vars
 			pkg:      grunt.file.readJSON('package.json'),
 			projname: '<%= pkg.name %>', // change here or in package.json
 			src:      'src',
