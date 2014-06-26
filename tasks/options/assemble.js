@@ -17,8 +17,6 @@ module.exports = {
 		],
 		layoutdir: 'src/content/templates',
 		layout: false,
-
-
 	},
 
 	// Splitting the targets below don't allow for the dynamic status page list

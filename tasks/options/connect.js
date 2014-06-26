@@ -23,7 +23,8 @@ module.exports = {
 				return [
 					lrSnippet,
 					mountFolder(connect, '.tmp'),
-					mountFolder(connect, '<%= src %>')
+					mountFolder(connect, '<%= src %>'),
+          mountFolder(connect, '.')
 				];
 			}
 		}

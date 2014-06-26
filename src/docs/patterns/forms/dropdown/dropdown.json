@@ -9,7 +9,7 @@
 		"second": "hers"
 	},
 	"css": {
-		"select": "src/css/base/forms/_select.scss",
-		"multiselect": "src/css/base/forms/_multiselect-box.scss"
+		"select": "src/css/generic/forms/_select.scss",
+		"multiselect": "src/css/generic/forms/_multiselect-box.scss"
 	}
 }

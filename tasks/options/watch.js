@@ -15,7 +15,10 @@ module.exports = {
 	},
 
 	data: {
-		files: ['<%= src %>/data/*.json', '<%= src %>/templates/partials/**/*.json'],
+		files: [
+      '<%= src %>/data/*.json',
+      '<%= src %>/docs/patterns/**/*.json'
+    ],
 		tasks: ['assemble:server']
 	},
 
@@ -26,7 +29,10 @@ module.exports = {
 
 	svg: {
 		files: ['<%= src %>/images/svg-src/*.svg'],
-		tasks: ['grunticon','copy:svg_build']
+		tasks: [
+      'grunticon',
+      'copy:svg_build'
+    ]
 	},
 
 	images: {
@@ -54,7 +60,10 @@ module.exports = {
 			'<%= src %>/css/**/*.{scss,sass}',
 			'<%= src %>/styleguide/*.css'
 		],
-		tasks: ['sass:server','sassdown']
+		tasks: [
+      'sass:server',
+      // 'sassdown'
+    ]
 	},
 
 	pages_all: {

@@ -1,6 +1,6 @@
 module.exports = function(grunt) {
 
-	grunt.registerTask('server', function (target) {
+	grunt.registerTask('serve', function (target) {
 
 		if (target === 'build') {
 

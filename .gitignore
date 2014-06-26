@@ -45,3 +45,5 @@ Thumbs.db
 /build
 /vendor
 .bundle
+Icon?
+svg-build/

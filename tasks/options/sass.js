@@ -11,7 +11,7 @@ module.exports = {
 			sourcemap: true,
 			debugInfo: true,
 			lineNumbers: true,
-			loadPath: ["src/bower_components"],
+			loadPath: ["<%= bower %>"],
 			// require: "susy",
 			bundleExec: true,
 			// banner: "/* Test banner */", // Can't be used if you use the sourcemap option.
@@ -33,7 +33,7 @@ module.exports = {
 			sourcemap: false,
 			debugInfo: false,
 			lineNumbers: false,
-			loadPath: ["src/bower_components"],
+			loadPath: ["<%= bower %>"],
 			// require: "susy",
 			bundleExec: true,
 			// banner: "/* Test banner */", // Can't be used if you use the sourcemap option.
