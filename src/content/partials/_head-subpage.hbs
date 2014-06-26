@@ -1,0 +1,14 @@
+<meta name="viewport" content="initial-scale=1">
+
+{{!-- block asset path is different for pages in root directory --}}
+{{!-- Possibly even differs if this is in a partial --}}
+
+<!-- build:css ../build/css/styles.css -->
+<link rel="stylesheet" type="text/css" href="{{assets}}/css/styles.css">
+<!-- endbuild -->
+<!-- build:css ../build/css/project.css -->
+<link rel="stylesheet" type="text/css" href="{{assets}}/css/project.css">
+<!-- endbuild -->
+<!-- build:js ../build/js/vendor/modernizr.js -->
+<script src="{{assets}}/bower_components/modernizr/modernizr.js"></script>
+<!-- endbuild -->
