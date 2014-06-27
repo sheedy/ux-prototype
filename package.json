@@ -34,7 +34,6 @@
     "grunt-open": "0.2.3",
     "grunt-concurrent": "0.5.0",
     "grunt-grunticon": "1.2.8",
-    "grunt-arialinter": "0.2.1",
     "grunt-shell": "0.7.0",
     "grunt-prettify": "0.3.5",
     "grunt-photobox": "0.8.0",

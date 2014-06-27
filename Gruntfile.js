@@ -12,7 +12,7 @@ module.exports = function (grunt) {
 
   // Display task times
   require('time-grunt')(grunt);
-  // Load tasks as needed for performance
+  // Load tasks as needed, for better performance
   require('jit-grunt')(grunt, {
     replace:               'grunt-text-replace',
     useminPrepare:         'grunt-usemin',
