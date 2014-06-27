@@ -1,3 +1,22 @@
 @charset "utf-8";
 
-@import "utilities/config-project";
+/**
+*
+* Styles that facilitate designing in the browser
+*
+* NOT for production use
+*
+**/
+
+@import "modular-scale/stylesheets/modular-scale";
+
+// Variables
+//------------------------------------------------------------------------------
+
+@import "utilities/variables";
+
+
+// Project specific styles
+//------------------------------------------------------------------------------
+
+@import "_project/dib/iframe";

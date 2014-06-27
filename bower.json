@@ -1,22 +1,17 @@
 {
   "name": "ux-prototype",
   "version": "0.0.1",
-  "dependencies": {
-    "modernizr": "~2.6.2",
-    "jquery": "~1.9.0",
-    "jquery-color": "~2.1.2",
-    "animate.css": "~2.1.1",
-    "modular-scale": "~2.0.4",
-    "fittext": "*",
-    "letteringjs": "~0.6.1",
-    "neat": "~1.6.0",
-    "bourbon": "~3.1.8",
-    "normalize-scss": "~3.0.1",
-    "RulersGuides.js": "https://github.com/mark-rolich/RulersGuides.js"
-  },
+  "private": true,
+  "dependencies": {},
   "devDependencies": {
-    "jquery.adaptive-backgrounds": "https://github.com/briangonzalez/jquery.adaptive-backgrounds.js",
-    "colors": "~0.2.0",
-    "signet": "~0.4.7"
+    "jquery":                       ">=1.9.0",
+    "animate.css":                  ">=2.1.1",
+    "modular-scale":                ">=2.0.4",
+    "fittext":                      "*",
+    "letteringjs":                  ">=0.6.1",
+    "neat":                         "~1.6.0",
+    "bourbon":                      "~3.1.8",
+    "normalize-scss":               ">=3.0.1",
+    "colors":                       ">=0.2.0"
   }
 }

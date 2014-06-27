@@ -10,16 +10,19 @@
 
 .tab {
 
-	&.active {
+  &.active {
 
-	}
-	& + .tab {
-		border-left: none !important;
-	}
-	&:first-of-type {
-		border-left-radius: $border-radius-default;
-	}
-	&:last-of-type {
-		border-right-radius: $border-radius-default;
-	}
+  }
+
+  & + .tab {
+    border-left: none !important;
+  }
+
+  &:first-of-type {
+    border-left-radius: $border-radius-default;
+  }
+
+  &:last-of-type {
+    border-right-radius: $border-radius-default;
+  }
 }

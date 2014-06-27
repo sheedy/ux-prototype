@@ -6,9 +6,9 @@
 
 .button {
 
-	&:hover {
+  &:hover {
 
-	}
+  }
 }
 
 //
@@ -16,38 +16,38 @@
 //
 
 %submit-buttons-inline {
-	text-align: right;
-	a:not(:first-child) {
-		margin-left: 8px;
-	}
+  text-align: right;
+  a:not(:first-child) {
+    margin-left: 8px;
+  }
 }
 
 %submit-buttons-stacked {
-	text-align: right;
-	.button + .button {
-		margin-top: 9px;
-	}
+  text-align: right;
+  .button + .button {
+    margin-top: 9px;
+  }
 }
 
 .button-row {
-	@extend %submit-buttons-inline;
+  @extend %submit-buttons-inline;
 
-	font-size: 0;
+  font-size: 0;
 
-	margin: 25px, 0, 0, 0;
+  margin: 25px, 0, 0, 0;
 
-	.button {
-		display: inline-block;
-		min-width: 100px;
+  .button {
+    display: inline-block;
+    min-width: 100px;
 
-		margin-left: 10px;
-	}
+    margin-left: 10px;
+  }
 
-	button {
-		margin-left: 10px;
-	}
+  button {
+    margin-left: 10px;
+  }
 }
 
 .button-column {
-	@extend %submit-buttons-stacked;
+  @extend %submit-buttons-stacked;
 }
