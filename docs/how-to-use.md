@@ -13,7 +13,7 @@ Source files are in the ``src`` directory and the static/flat output is output t
 Start a server with livereload and edit your HTML (.hbs), SASS or js files from the `src` and have the changes update in the browser without refreshing.
 
 ```
-grunt server
+grunt serve
 ```
 
 #### Building static output

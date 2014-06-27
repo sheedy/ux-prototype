@@ -31,35 +31,36 @@ html {
 }
 
 body {
+  // normal: Indicates that lines may only break at normal word break points.
+  // break-word : Indicates that normally unbreakable words may be broken at ...
+  // arbitrary points if there are no otherwise acceptable break points in the line.
+  @extend %breakword;
+
   // margin: 0;
   // padding: 0;
   background-color: lighten($bg-color, 7%);
   // Ala Trent Walton
   @include css-hyphens(auto);
-  // normal: Indicates that lines may only break at normal word break points.
-  // break-word : Indicates that normally unbreakable words may be broken at ...
-  // arbitrary points if there are no otherwise acceptable break points in the line.
-  @extend %breakword;
 }
 
 hr {
   // background: $border-color;
-  border: none;
+  border: 0;
   // height: 1px;
   margin: $base-line-height + rem 0;
 }
 
 .wrapper {
-    // width: $body-width;
-    // margin: 0 auto;
-    @include outer-container;
+  // width: $body-width;
+  // margin: 0 auto;
+  @include outer-container;
 }
 
 // Allow JS to detect media queries
 // source: http://adactio.com/journal/5429/
 @media all and (min-width: 45em) {
-    body:after {
-        content: 'widescreen';
-        display: none;
-    }
+  body:after {
+      content: 'widescreen';
+      display: none;
+  }
 }

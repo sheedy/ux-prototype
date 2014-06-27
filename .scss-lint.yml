@@ -3,7 +3,7 @@ linters:
     enabled: true
 
   CapitalizationInSelector:
-    enabled: false
+    enabled: true
 
   ColorKeyword:
     enabled: true
@@ -15,95 +15,95 @@ linters:
     enabled: true
 
   DeclarationOrder:
-    enabled: false
+    enabled: true
 
   DuplicateProperty:
-    enabled: false
+    enabled: true
 
   EmptyLineBetweenBlocks:
-    enabled: false
-    ignore_single_line_blocks: false
+    enabled: true
+    ignore_single_line_blocks: true
 
   EmptyRule:
     enabled: false
 
   FinalNewline:
     enabled: false
-    present: false
+    present: true
 
   HexFormat:
-    enabled: false
+    enabled: true
 
   IdWithExtraneousSelector:
-    enabled: false
+    enabled: true
 
   Indentation:
-    enabled: false
+    enabled: true
     width: 2
 
   LeadingZero:
-    enabled: false
+    enabled: true
     style: exclude_zero # or 'include_zero'
 
   NameFormat:
-    enabled: false
+    enabled: true
     convention: hyphenated_lowercase # or 'BEM', or a regex pattern
 
   PlaceholderInExtend:
-    enabled: false
+    enabled: true
 
   PropertySortOrder:
-    enabled: false
+    enabled: true
 
   PropertySpelling:
-    enabled: false
+    enabled: true
     extra_properties: []
 
   SelectorDepth:
-    enabled: false
+    enabled: true
     max_depth: 3
 
   Shorthand:
-    enabled: false
+    enabled: true
 
   SingleLinePerSelector:
-    enabled: false
+    enabled: true
 
   SpaceAfterComma:
-    enabled: false
+    enabled: true
 
   SpaceAfterPropertyColon:
-    enabled: false
+    enabled: true
 
   SpaceAfterPropertyName:
-    enabled: false
+    enabled: true
 
   SpaceBeforeBrace:
-    enabled: false
-    allow_single_line_padding: false
+    enabled: true
+    allow_single_line_padding: true
 
   SpaceBetweenParens:
-    enabled: false
+    enabled: true
     spaces: 0
 
   StringQuotes:
-    enabled: false
-    style: single_quotes # or double_quotes
+    enabled: true
+    style: double_quotes # or double_quotes
 
   TrailingSemicolonAfterPropertyValue:
-    enabled: false
+    enabled: true
 
   UnnecessaryMantissa:
-    enabled: false
+    enabled: true
 
   UrlFormat:
-    enabled: false
+    enabled: true
 
   UrlQuotes:
-    enabled: false
+    enabled: true
 
   ZeroUnit:
-    enabled: false
+    enabled: true
 
   Compass::*:
-    enabled: false
+    enabled: true

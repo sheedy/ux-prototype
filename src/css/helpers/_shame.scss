@@ -1,13 +1,13 @@
 %col-shade {
-	background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .main {
-	@extend %col-shade;
-	@include span-columns(9);
+  @extend %col-shade;
+  @include span-columns(9);
 }
 
 .sidebar {
-	@extend %col-shade;
-	@include span-columns(3);
+  @extend %col-shade;
+  @include span-columns(3);
 }

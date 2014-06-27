@@ -33,15 +33,15 @@ $ms-base: 1rem;
 $ms-ratio: $fourth;
 
 // Font size list (steps up the modular scale)
-$tera:                                                  8;
-$giga:                                                  7;
-$mega:                                                  6;
-$alpha:                                                 5;
-$beta:                                                  4;
-$gamma:                                                 3;
-$delta:                                                 2;
-$epsilon:                                               1;
-$zeta:                                                  0;
+$tera:                     8;
+$giga:                     7;
+$mega:                     6;
+$alpha:                    5;
+$beta:                     4;
+$gamma:                    3;
+$delta:                    2;
+$epsilon:                  1;
+$zeta:                     0;
 
 $type-scale-unit-value: rem !default;
 
@@ -57,15 +57,15 @@ $type-scale-unit-value: rem !default;
 $gutter-width:            20px;
 $body-width:              960px;
 $columns:                 12;
-$column-width: 			  $body-width / $columns - $gutter-width;
+$column-width:            $body-width / $columns - $gutter-width;
 $grid-padding:            20px;
 $show-grid-backgrounds:   false;
 
 // Bourbon Neat grid settings
-$column: $column-width;
-$gutter: $gutter-width;
-$grid-columns: $columns;
-$max-width: $body-width;
+$column:                  $column-width;
+$gutter:                  $gutter-width;
+$grid-columns:            $columns;
+$max-width:               $body-width;
 
 // -----  End of Grid  ------
 
@@ -96,33 +96,33 @@ $shadow-grey:             $mid-grey;
 $border-grey:             $grey;
 $border-grey-light:       $light-grey;
 $required-grey:           $mid-grey;
-$required-red:			  red;
-$error-red: 			  red;
-$pale-yellow: 			  #fff8bb;
+$required-red:            red;
+$error-red:               red;
+$pale-yellow:             #fff8bb;
 
 // ========== Colours with context  ==========
 
 $body-color:              $mid-grey;
 
-$header-dark: 			  $black;
-$header-mid: 			  $black;
-$header-light: 			  $black;
+$header-dark:             $black;
+$header-mid:              $black;
+$header-light:            $black;
 
-$link-color: 			  $black;
-$link-color-light: 		  $border-grey;
-$bg-color: 				  $bg-grey;
-$shadow-color: 			  $shadow-grey;
-$border-color: 			  $border-grey;
-$border-color-light: 	  $border-grey-light;
+$link-color:              $black;
+$link-color-light:        $border-grey;
+$bg-color:                $bg-grey;
+$shadow-color:            $shadow-grey;
+$border-color:            $border-grey;
+$border-color-light:      $border-grey-light;
 $notification-bubble-bg:  $required-grey;
-$error-colour: 			  $error-red;
+$error-colour:            $error-red;
 
-$table-header: 			  $bg-grey;
+$table-header:            $bg-grey;
 
-$frame-color: 			  $grey;
+$frame-color:             $grey;
 
-$focus-color: 			  $black;
-$focus-field-color: 	  $pale-yellow;
+$focus-color:             $black;
+$focus-field-color:       $pale-yellow;
 
 // -----  End of Colours  ------
 
@@ -133,14 +133,14 @@ $focus-field-color: 	  $pale-yellow;
 //           Device sizes
 // ====================================
 
-$phone-w: 				  320px;
-$phone-h: 				  480px;
-$tab-lw: 				  1024px;
-$tab-lh: 				  768px;
-$tab-pw: 				  768px;
-$tab-ph: 				  1024px;
-$desk-w: 				  1600px;
-$desk-h: 				  1200px;
+$phone-w:                 320px;
+$phone-h:                 480px;
+$tab-lw:                  1024px;
+$tab-lh:                  768px;
+$tab-pw:                  768px;
+$tab-ph:                  1024px;
+$desk-w:                  1600px;
+$desk-h:                  1200px;
 
 // -----  End of Device sizes  ------
 

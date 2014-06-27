@@ -39,7 +39,7 @@
     "grunt-prettify": "0.3.5",
     "grunt-rev": "0.1.0",
     "grunt-sass": "0.14.0",
-    "grunt-scsslint": "0.1.0",
+    "grunt-scss-lint": "0.1.12",
     "grunt-text-replace": "0.3.12",
     "grunt-usemin": "2.2.0",
     "jit-grunt": "0.7.0",
