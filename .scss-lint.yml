@@ -1,109 +1,168 @@
+# Comments pulled from https://github.com/causes/scss-lint/blob/master/lib/scss_lint/linter/README.md
+
+# inherit_from: '../../inherited-config.yml'
+
+# exclude: 'app/assets/stylesheets/plugins/**'
+
+# Default application configuration that all configurations inherit from.
 linters:
+
   BorderZero:
+    # Prefer border: 0 over border: none.
     enabled: true
 
   CapitalizationInSelector:
+    # IDs, classes, types, placeholders, and pseudo-selectors should be all lowercase.
     enabled: true
 
   ColorKeyword:
+    # Prefer hexadecimal color codes over color keywords.
     enabled: true
 
   Comment:
+    # Prefer // comments over /* ... */.
     enabled: false
 
   DebugStatement:
+    # Reports @debug statements (which you probably left behind accidentally).
     enabled: true
 
   DeclarationOrder:
+    # Write @extend statements first in rule sets, followed by property declarations and then other
+    # nested rule sets.
+    #
+    # The @extend statement functionally acts like an inheritance mechanism, which means the
+    # properties defined by the placeholder being extended are rendered before the rest of the
+    # properties in the rule set.
+    # Thus, declaring the @extend at the top of the rule set reminds the developer of this behavior.
     enabled: true
 
   DuplicateProperty:
+    # Reports when you define the same property twice in a single rule set.
+    enabled: true
+
+  DuplicateRoot:
+    # Reports when you define the same root selector twice in a single sheet.
     enabled: true
 
   EmptyLineBetweenBlocks:
+    # Separate rule, function, and mixin declarations with empty lines.
     enabled: true
-    ignore_single_line_blocks: true
+    ignore_single_line_blocks: true # Don't enforce for single-line blocks (default true)
 
   EmptyRule:
-    enabled: false
-
-  FinalNewline:
-    enabled: false
-    present: true
-
-  HexFormat:
+    # Reports when you have an empty rule set.
     enabled: true
 
+  FinalNewline:
+    enabled: true
+    present: true # Whether a final newline should be present (default true)
+
+  HexFormat:
+    # Prefer the shortest possible form for hexadecimal color codes.
+    enabled: false
+
   IdWithExtraneousSelector:
+    # Don't combine additional selectors with an ID selector.
     enabled: true
 
   Indentation:
+    # Use two spaces per indentation level. No hard tabs.
     enabled: true
-    width: 2
+    width: 2 # Number of spaces per indentation level (default 2)
 
   LeadingZero:
+    # Don't write leading zeros for numeric values with a decimal point.
     enabled: true
-    style: exclude_zero # or 'include_zero'
+    style: include_zero # or 'include_zero'
 
   NameFormat:
-    enabled: true
-    convention: hyphenated_lowercase # or 'BEM', or a regex pattern
+    # Functions, mixins, and variables should be declared with all lowercase letters and hyphens
+    # instead of underscores.
+    enabled: false
+    convention: hyphenated_lowercase # Name of convention to use (hyphenated-lowercase (default)
+                                     # or BEM), or a regex the name must match
 
   PlaceholderInExtend:
+    # Always use placeholder selectors in @extend.
     enabled: true
 
   PropertySortOrder:
+    # Sort properties in a strict order
     enabled: true
+    order: nil # Array of properties (default is nil, resulting in alphabetical ordering)
 
   PropertySpelling:
+    # Reports when you use an unknown CSS property (ignoring vendor-prefixed properties)
     enabled: true
-    extra_properties: []
+    # extra_properties: # List of extra properties to allow
+      # - other-property
+      # - other-property
 
   SelectorDepth:
+    # Don't write selectors with a depth of applicability greater than 3.
+    # Selectors with a large depth of applicability lead to CSS tightly-coupled to your HTML
+    # structure, making it brittle to change.
     enabled: true
     max_depth: 3
 
   Shorthand:
+    # Prefer the shortest shorthand form possible for properties that support it.
     enabled: true
 
   SingleLinePerSelector:
-    enabled: true
+    # Split selectors onto separate lines after each comma.
+    enabled: false
 
   SpaceAfterComma:
+    # Commas in lists should be followed by a space.
     enabled: true
 
   SpaceAfterPropertyColon:
+    # Properties should be formatted with a single space separating the colon from the property's
+    # value.
     enabled: true
+    allow_extra_spaces: true # Whether to allow more than one space so values can be aligned
 
   SpaceAfterPropertyName:
+    # Properties should be formatted with no space between the name and the colon.
     enabled: true
 
   SpaceBeforeBrace:
+    # Opening braces should be preceded by a single space.
     enabled: true
-    allow_single_line_padding: true
+    allow_single_line_padding: true # Allow single line blocks to have extra spaces
 
   SpaceBetweenParens:
+    # Parentheses should not be padded with spaces.
     enabled: true
-    spaces: 0
+    spaces: 0 # Spaces to require between parentheses (default 0)
 
   StringQuotes:
+    # String literals should be written with single quotes unless using double quotes would save on
+    # escape characters.
     enabled: true
-    style: double_quotes # or double_quotes
+    style: double_quotes # single_quotes or double_quotes (default single_quotes)
 
   TrailingSemicolonAfterPropertyValue:
+    # Property values should always end with a semicolon.
     enabled: true
 
   UnnecessaryMantissa:
+    # Numeric values should not contain unnecessary fractional portions.
     enabled: true
 
   UrlFormat:
+    # URLs should not contain protocols or domain names.
     enabled: true
 
   UrlQuotes:
+    # URLs should always be enclosed within quotes.
     enabled: true
 
   ZeroUnit:
-    enabled: true
+    # Omit units on zero values.
+    enabled: false
 
   Compass::*:
-    enabled: true
+    enabled: false

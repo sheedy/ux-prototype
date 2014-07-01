@@ -17,6 +17,7 @@
 
 %submit-buttons-inline {
   text-align: right;
+
   a:not(:first-child) {
     margin-left: 8px;
   }
@@ -24,6 +25,7 @@
 
 %submit-buttons-stacked {
   text-align: right;
+
   .button + .button {
     margin-top: 9px;
   }

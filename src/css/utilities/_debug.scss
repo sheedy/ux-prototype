@@ -44,25 +44,25 @@ $visual-grid-opacity:            0.5;
 
 @if ($debug == true) {
 
-	// debug
-	@if $debug-baseline-type {
-	  @include debug-baseline($debug-baseline-type);
-	}
+  // debug
+  @if $debug-baseline-type {
+    @include debug-baseline($debug-baseline-type);
+  }
 
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6 {
-		background-color: rgba(255,0,0,0.2);
-	}
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    background-color: rgba(255,0,0,0.2);
+  }
 
-	// http://jackosborne.com/articles/using-media-queries-to-check-your-designs-in-the-browser/
-	@media screen and (max-width: 1200px) {
-		// .wrapper { opacity: 0.4; }
-		// body { background: url('mock-up.png') no-repeat center top; }
-	}
+  // http://jackosborne.com/articles/using-media-queries-to-check-your-designs-in-the-browser/
+  @media screen and (max-width: 1200px) {
+    // .wrapper { opacity: 0.4; }
+    // body { background: url('mock-up.png') no-repeat center top; }
+  }
 
 }
 
