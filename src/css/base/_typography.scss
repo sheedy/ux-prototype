@@ -52,7 +52,7 @@ $size-list: tera $tera, giga $giga, mega $mega, alpha $alpha, beta $beta, gamma 
 // heading based on a modular scale.
 // for each size in the scale, create a class
 @each $size-item in $size-list {
-  .#{nth($size-item, 1)} {
+  %#{nth($size-item, 1)} {
     // @include type-scale(nth($size, 2), $font-size-unitless, '#{$type-scale-unit-value}', $measure);
     @include ms-and-vrythm(nth($size-item, 2));
   }
@@ -60,32 +60,32 @@ $size-list: tera $tera, giga $giga, mega $mega, alpha $alpha, beta $beta, gamma 
 
 // associate h1-h6 tags with their appropriate greek heading
 h1, .h1 {
-  @extend .alpha;
+  @extend %alpha;
   @extend %hN;
 }
 
 h2, .h2 {
-  @extend .beta;
+  @extend %beta;
   @extend %hN;
 }
 
 h3, .h3 {
-  @extend .gamma;
+  @extend %gamma;
   @extend %hN;
 }
 
 h4, .h4 {
-  @extend .delta;
+  @extend %delta;
   @extend %hN;
 }
 
 h5, .h5 {
-  @extend .epsilon;
+  @extend %epsilon;
   @extend %hN;
 }
 
 h6, .h6 {
-  @extend .zeta;
+  @extend %zeta;
   @extend %hN;
 }
 

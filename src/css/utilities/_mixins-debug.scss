@@ -1,46 +1,46 @@
 @mixin debug-baseline($type: stripe) {
-	body {
-		@if ($type == 'stroke') {
-												// starting point, stroke colour, stroke width, gap colour, gap width
-			background-image: -webkit-linear-gradient(top, $debug-baseline-stroke-color $debug-baseline-stroke-width, transparent $debug-baseline-stroke-width);
-			background-image:    -moz-linear-gradient(top, $debug-baseline-stroke-color $debug-baseline-stroke-width, transparent $debug-baseline-stroke-width);
-			background-image:     -ms-linear-gradient(top, $debug-baseline-stroke-color $debug-baseline-stroke-width, transparent $debug-baseline-stroke-width);
-			background-image:      -o-linear-gradient(top, $debug-baseline-stroke-color $debug-baseline-stroke-width, transparent $debug-baseline-stroke-width);
-			background-image:         linear-gradient(top, $debug-baseline-stroke-color $debug-baseline-stroke-width, transparent $debug-baseline-stroke-width);
-			background-size: auto #{$base-line-height}rem;
-			background-position: 0 $debug-baseline-offset;
-		}
-		@if ($type == 'stripe') {
-												 // starting point, stripe colour, stripe width, gap colour, gap width
-			background-image: -webkit-linear-gradient(top, $debug-baseline-stripe-color $debug-baseline-stripe-width, transparent $debug-baseline-stripe-width);
-			background-image:    -moz-linear-gradient(top, $debug-baseline-stripe-color $debug-baseline-stripe-width, transparent $debug-baseline-stripe-width);
-			background-image:     -ms-linear-gradient(top, $debug-baseline-stripe-color $debug-baseline-stripe-width, transparent $debug-baseline-stripe-width);
-			background-image:      -o-linear-gradient(top, $debug-baseline-stripe-color $debug-baseline-stripe-width, transparent $debug-baseline-stripe-width);
-			background-image:         linear-gradient(top, $debug-baseline-stripe-color $debug-baseline-stripe-width, transparent $debug-baseline-stripe-width);
+  body {
+    @if ($type == 'stroke') {
+                        // starting point, stroke colour, stroke width, gap colour, gap width
+      background-image: -webkit-linear-gradient(top, $debug-baseline-stroke-color $debug-baseline-stroke-width, transparent $debug-baseline-stroke-width);
+      background-image:    -moz-linear-gradient(top, $debug-baseline-stroke-color $debug-baseline-stroke-width, transparent $debug-baseline-stroke-width);
+      background-image:     -ms-linear-gradient(top, $debug-baseline-stroke-color $debug-baseline-stroke-width, transparent $debug-baseline-stroke-width);
+      background-image:      -o-linear-gradient(top, $debug-baseline-stroke-color $debug-baseline-stroke-width, transparent $debug-baseline-stroke-width);
+      background-image:         linear-gradient(top, $debug-baseline-stroke-color $debug-baseline-stroke-width, transparent $debug-baseline-stroke-width);
+      background-size: auto #{$base-line-height}rem;
+      background-position: 0 $debug-baseline-offset;
+    }
+    @if ($type == 'stripe') {
+                         // starting point, stripe colour, stripe width, gap colour, gap width
+      background-image: -webkit-linear-gradient(top, $debug-baseline-stripe-color $debug-baseline-stripe-width, transparent $debug-baseline-stripe-width);
+      background-image:    -moz-linear-gradient(top, $debug-baseline-stripe-color $debug-baseline-stripe-width, transparent $debug-baseline-stripe-width);
+      background-image:     -ms-linear-gradient(top, $debug-baseline-stripe-color $debug-baseline-stripe-width, transparent $debug-baseline-stripe-width);
+      background-image:      -o-linear-gradient(top, $debug-baseline-stripe-color $debug-baseline-stripe-width, transparent $debug-baseline-stripe-width);
+      background-image:         linear-gradient(top, $debug-baseline-stripe-color $debug-baseline-stripe-width, transparent $debug-baseline-stripe-width);
 
-			background-size: auto #{$base-line-height * 2}rem;
-			background-position: 0 $debug-baseline-offset;
-		}
-		@if ($type == 'col-stroke') {
-			&:before {
-				content: '';
-				display: inline-block;
-				background-image: -webkit-linear-gradient(0deg, $debug-column-color $column-width, transparent $gutter-width),
-				                -webkit-linear-gradient(top, $debug-baseline-stroke-color $debug-baseline-stroke-width, transparent $debug-baseline-stroke-width);
-				background-size: ($column-width + $gutter-width) 100%, 100% #{$base-line-height}rem;
-				background-position: $gutter-width/2 0px; // Use to offset and center your grid
+      background-size: auto #{$base-line-height * 2}rem;
+      background-position: 0 $debug-baseline-offset;
+    }
+    @if ($type == 'col-stroke') {
+      &:before {
+        content: '';
+        display: inline-block;
+        background-image: -webkit-linear-gradient(0deg, $debug-column-color $column-width, transparent $gutter-width),
+                        -webkit-linear-gradient(top, $debug-baseline-stroke-color $debug-baseline-stroke-width, transparent $debug-baseline-stroke-width);
+        background-size: ($column-width + $gutter-width) 100%, 100% #{$base-line-height}rem;
+        background-position: $gutter-width/2 0px; // Use to offset and center your grid
 
-				height: 100%;
-				left: 0;
-				margin: 0 auto;
-				max-width: $body-width;
-				opacity: 0.4;
-				position: absolute;
-				right: 0;
-				width: 100%;
-				pointer-events: none;
-				z-index: -1;
-			}
-		}
-	}
+        height: 100%;
+        left: 0;
+        margin: 0 auto;
+        max-width: $body-width;
+        opacity: 0.4;
+        position: absolute;
+        right: 0;
+        width: 100%;
+        pointer-events: none;
+        z-index: -1;
+      }
+    }
+  }
 }

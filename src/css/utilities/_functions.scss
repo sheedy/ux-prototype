@@ -16,7 +16,7 @@
 
 // A small, internally-used function to remove the units from a given value.
 @function typecsset-strip-units($number) {
-    @return $number / ($number * 0 + 1);
+  @return $number / ($number * 0 + 1);
 }
 
 @function calc-rem($size) {
@@ -28,41 +28,41 @@
 // Make $margin-adjust a number that is multipled by line height so we can center
 // just one number
 @function ms-line-height-calc($font-scale, $margin-adjust: $base-line-height) {
-	// get modular scale value using $font-scale to select which level
-	$font-size: ms($font-scale);
-	// start a multiple counter to iterate through
-	$multiple: 1;
-	// set new baseline height value to current baseline height value
-	$new-base-line-height: $base-line-height;
-	// as long as $font-size is greater than $new-base-line-height...
-	@while $font-size > $new-base-line-height { // loop
-		// increase the $multiple value by 1
-		$multiple: $multiple + 1;
-		// set the new base line height to the original times the current $multiple value
-		$new-base-line-height: $base-line-height * $multiple;
-	}
+  // get modular scale value using $font-scale to select which level
+  $font-size: ms($font-scale);
+  // start a multiple counter to iterate through
+  $multiple: 1;
+  // set new baseline height value to current baseline height value
+  $new-base-line-height: $base-line-height;
+  // as long as $font-size is greater than $new-base-line-height...
+  @while $font-size > $new-base-line-height { // loop
+    // increase the $multiple value by 1
+    $multiple: $multiple + 1;
+    // set the new base line height to the original times the current $multiple value
+    $new-base-line-height: $base-line-height * $multiple;
+  }
 
-	@return (($new-base-line-height + $margin-adjust) / typecsset-strip-units($font-size));;
+  @return (($new-base-line-height + $margin-adjust) / typecsset-strip-units($font-size));;
 }
 
 @function line-height-calc($size, $margin-adjust: $base-line-height) {
-	// calculate rem value
-	$font-size-rem: calc-rem($size);
-	// strip rem unit
-	$font-size: typecsset-strip-units($font-size-rem);
-	// start a multiple counter to iterate through
-	$multiple: 1;
-	// set new baseline height value to current baseline height value
-	$tmp-line-height: $base-line-height;
-	// as long as $font-size is greater than $tmp-line-height...
-	@while $font-size > $tmp-line-height { // loop
-		// increase the $multiple value by 1
-		$multiple: $multiple + 1;
-		// set the new base line height to the original times the current $multiple value
-		$tmp-line-height: $base-line-height * $multiple;
-	}
-	$line-height: $tmp-line-height + $margin-adjust;
-	$line-height: $line-height / $font-size;
+  // calculate rem value
+  $font-size-rem: calc-rem($size);
+  // strip rem unit
+  $font-size: typecsset-strip-units($font-size-rem);
+  // start a multiple counter to iterate through
+  $multiple: 1;
+  // set new baseline height value to current baseline height value
+  $tmp-line-height: $base-line-height;
+  // as long as $font-size is greater than $tmp-line-height...
+  @while $font-size > $tmp-line-height { // loop
+    // increase the $multiple value by 1
+    $multiple: $multiple + 1;
+    // set the new base line height to the original times the current $multiple value
+    $tmp-line-height: $base-line-height * $multiple;
+  }
+  $line-height: $tmp-line-height + $margin-adjust;
+  $line-height: $line-height / $font-size;
 
-	@return $line-height;
+  @return $line-height;
 }
