@@ -29,7 +29,7 @@ Thumbs.db
 
 # Sublime Text#
 ###############
-*.sublime-*
+*.sublime-workspace
 
 # Miscellaneous #
 #################
