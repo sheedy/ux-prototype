@@ -30,8 +30,7 @@ All features are optional, if you don't want to use one just comment it out in t
 - Package/asset management (jQuery, modernizr, etc.) - [Bower](http://bower.io/)
 - Minification of JS and CSS
 - Image optimisation
-- Rule based linting of [JS](https://github.com/gruntjs/grunt-contrib-jshint), [CSS](https://github.com/stubbornella/csslint), [HTML](https://github.com/yaniswang/HTMLHint) and [Accessibility](https://github.com/globant-ui/arialinter)
-- Reordering/formatting of CSS according to rules you set – [CSSComb](https://github.com/csscomb/csscomb.js)
+- Rule based linting of [JS](https://github.com/gruntjs/grunt-contrib-jshint), [CSS](https://github.com/stubbornella/csslint) and [HTML](https://github.com/yaniswang/HTMLHint)
 - HTML beautification according to rules you set – [Prettify](https://github.com/jonschlinkert/grunt-prettify)
 - Growl notifications
 

@@ -1,19 +1,19 @@
 {
-	"folders":
-	[
-		{
-			"follow_symlinks": true,
-			"path": ".",
-			"folder_exclude_patterns": [
-				// ".tmp",
-				// "node_modules",
-				"vendor/bundle"
-				// "src/bower_components"
-			]
-		}
-	],
-	"settings": {
-		"tab_size": 4,
-		"translate_tabs_to_spaces": false
-	}
+  "folders":
+  [
+    {
+      "follow_symlinks": true,
+      "path": ".",
+      "folder_exclude_patterns": [
+        // ".tmp",
+        // "node_modules",
+        // "vendor/bundle"
+        // "src/bower_components"
+      ]
+    }
+  ],
+  "settings": {
+    "tab_size": 2,
+    "translate_tabs_to_spaces": true
+  }
 }
