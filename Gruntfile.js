@@ -16,7 +16,8 @@ module.exports = function (grunt) {
   require('jit-grunt')(grunt, {
     replace:               'grunt-text-replace',
     useminPrepare:         'grunt-usemin',
-    scsslint:              'grunt-scss-lint'
+    scsslint:              'grunt-scss-lint',
+    sass:                  'grunt-sass'
   })({
     loadTasks:             './tasks'
   });

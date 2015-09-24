@@ -1,20 +1,22 @@
 module.exports = {
 
-  // Grunt task to compile Sass SCSS to CSS
-  // https://github.com/gruntjs/grunt-contrib-sass
+  // Grunt task to compile Sass SCSS to CSS using libsass/node-sass (FAST!!!)
+  // Compass will not work with Libsass
+  // https://github.com/sindresorhus/grunt-sass
+
+  options: {
+
+  },
 
   server: {
     options: {
       style: 'expanded',                  // nested | compact | compressed | expanded
       precision: 6,
       trace: false,
-      sourcemap: true,
       debugInfo: true,
       lineNumbers: true,
-      loadPath: ["<%= bower %>"],
-      // require: "susy",
-      bundleExec: true,
       // banner: "/* Test banner */",     // Can't be used if you use the sourcemap option.
+      includePaths: ["<%= bower %>"]
     },
 
     files: [{
@@ -27,26 +29,24 @@ module.exports = {
   },
 
   build: {
-    options: {
-      style: 'expanded',                  // nested | compact | compressed | expanded
-      precision: 6,
-      trace: false,
-      sourcemap: false,
-      debugInfo: false,
-      lineNumbers: false,
-      loadPath: ["<%= bower %>"],
-      // require: "susy",
-      bundleExec: true,
-      // banner: "/* Test banner */",     // Can't be used if you use the sourcemap option.
-    },
+      options: {
+        style: 'expanded',                  // nested | compact | compressed | expanded
+        precision: 6,
+        trace: false,
+        sourcemap: false,
+        debugInfo: false,
+        lineNumbers: false,
+        // banner: "/* Test banner */",     // Can't be used if you use the sourcemap option.
+        includePaths: ["<%= bower %>"]
+      },
 
-    files: [{
-      expand: true,
-      cwd: 'src/css',
-      src: ['*.scss'],
-      dest: '<%= build %>/css',
-      ext: '.css'
-    }]
-  }
+      files: [{
+        expand: true,
+        cwd: 'src/css',
+        src: ['*.scss'],
+        dest: '<%= build %>/css',
+        ext: '.css'
+      }]
+    }
 
 }

@@ -1,17 +1,6 @@
 // Livereload
 // https://github.com/gruntjs/grunt-contrib-connect
 
-var lrSnippet = require('connect-livereload')(
-  {
-    // connect-livereload specific options
-    port: 35028
-  }
-);
-
-var mountFolder = function (connect, dir) {
-  return connect.static(require('path').resolve(dir));
-};
-
 module.exports = {
 
   options: {
@@ -21,25 +10,14 @@ module.exports = {
 
   livereload: {
     options: {
-      middleware: function (connect) {
-        return [
-          lrSnippet,
-          mountFolder(connect, '.tmp'),
-          mountFolder(connect, '<%= src %>'),
-          mountFolder(connect, '.')
-        ];
-      }
+      base: '.tmp'
     }
-  },
+  }/*,
 
   build: {
     options: {
-      middleware: function (connect) {
-        return [
-          mountFolder(connect, '<%= build %>')
-        ];
-      }
+      base: '<%= build %>',
     }
-  }
+  }*/
 
 }

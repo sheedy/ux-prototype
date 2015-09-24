@@ -63,7 +63,10 @@ module.exports = {
     tasks: [
       'sass:server',
       // 'sassdown'
-    ]
+    ],
+    options: {
+      nospawn: true // only reload the css, not the page
+    }
   },
 
   pages_all: {
