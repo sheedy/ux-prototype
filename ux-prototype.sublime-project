@@ -2,17 +2,18 @@
 	"folders":
 	[
 		{
+			"folder_exclude_patterns":
+			[
+			],
 			"follow_symlinks": true,
-      "path": ".",
-      "folder_exclude_patterns": [
-        // ".tmp",
-        // "node_modules",
-        // "vendor/bundle"
-        // "src/bower_components"
-      ]
+			"path": "."
 		}
 	],
-  "settings": {
+	"settings":
+	{
+		"FuzzyFilePath":
+		{
+		},
 		"tab_size": 2,
 		"translate_tabs_to_spaces": true
 	}
